@@ -1,0 +1,3301 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Сералиева А.М., Казиева А.Н. Экономика және кәсіпкерлік негіздері</title>
+
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #182230;
+      --muted: #667085;
+      --line: #e4e7ec;
+      --primary: #1d4ed8;
+      --primary-soft: #dbeafe;
+      --accent: #047857;
+      --accent-soft: #d1fae5;
+      --danger: #b42318;
+      --danger-soft: #fee4e2;
+      --warning: #92400e;
+      --warning-soft: #fef3c7;
+      --shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(29, 78, 216, 0.12), transparent 32%),
+        radial-gradient(circle at top right, rgba(4, 120, 87, 0.10), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 24px 0 72px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 22px;
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(228, 231, 236, 0.95);
+      border-radius: 999px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      backdrop-filter: blur(12px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), #2563eb);
+      color: #fff;
+      font-weight: 900;
+      flex: 0 0 auto;
+      box-shadow: 0 8px 20px rgba(29, 78, 216, 0.24);
+    }
+
+    .brand-text {
+      font-size: 13px;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #172554 0%, #1d4ed8 54%, #047857 100%);
+      color: #fff;
+      border-radius: 30px;
+      padding: 42px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -42%;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.20), transparent 28%),
+        radial-gradient(circle at 82% 28%, rgba(255, 255, 255, 0.14), transparent 26%),
+        radial-gradient(circle at 50% 92%, rgba(255, 255, 255, 0.11), transparent 22%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 930px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 5vw, 56px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .hero p {
+      margin: 18px 0 0;
+      max-width: 850px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 17px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .hero-chip {
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.23);
+      color: rgba(255, 255, 255, 0.94);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .nav-panel {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin: 24px 0;
+    }
+
+    .nav-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 0 4px;
+    }
+
+    .nav-title h2 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-title span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .chapter-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .chapter-card {
+      display: block;
+      min-height: 128px;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.055);
+      transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+    }
+
+    .chapter-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.10);
+      border-color: rgba(29, 78, 216, 0.28);
+    }
+
+    .chapter-num {
+      width: 38px;
+      height: 38px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .chapter-card strong {
+      display: block;
+      font-size: 15px;
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+
+    .chapter-card small {
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.38;
+      display: block;
+    }
+
+    .section {
+      margin: 28px 0;
+      scroll-margin-top: 24px;
+    }
+
+    .content-block {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      background: var(--primary-soft);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .content-block h3 {
+      margin: 0 0 12px;
+      font-size: clamp(23px, 3vw, 34px);
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+    }
+
+    .content-block > p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      max-width: 960px;
+    }
+
+    .note {
+      padding: 15px 16px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(4, 120, 87, 0.18);
+      border-radius: 18px;
+      color: #065f46;
+      font-size: 14.5px;
+      margin: 16px 0 20px;
+    }
+
+    .theory-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .theory-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .theory-card strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .theory-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .test-box {
+      margin-top: 24px;
+      padding: 20px;
+      border-radius: 22px;
+      background: #f8fbff;
+      border: 1px solid var(--line);
+    }
+
+    .test-box h3 {
+      margin: 0 0 6px;
+      font-size: 22px;
+    }
+
+    .section-desc {
+      margin: 0 0 18px !important;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .question {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      margin: 14px 0;
+    }
+
+    .question-title {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 12px;
+      align-items: start;
+      margin-bottom: 14px;
+    }
+
+    .q-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .q-text {
+      font-weight: 780;
+      line-height: 1.45;
+    }
+
+    .options {
+      display: grid;
+      gap: 9px;
+    }
+
+    .option {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      cursor: pointer;
+      font-size: 14.5px;
+      line-height: 1.45;
+      transition: background 0.16s ease, border-color 0.16s ease;
+    }
+
+    .option:hover {
+      background: #eff6ff;
+      border-color: rgba(29, 78, 216, 0.24);
+    }
+
+    .option input {
+      margin-top: 3px;
+      accent-color: var(--primary);
+      flex: 0 0 auto;
+    }
+
+    .option.correct {
+      background: var(--accent-soft);
+      border-color: rgba(4, 120, 87, 0.35);
+      color: #065f46;
+      font-weight: 700;
+    }
+
+    .option.wrong {
+      background: var(--danger-soft);
+      border-color: rgba(180, 35, 24, 0.35);
+      color: #842a20;
+      font-weight: 700;
+    }
+
+    .explanation {
+      display: none;
+      margin-top: 13px;
+      padding: 13px 14px;
+      border-radius: 14px;
+      background: var(--warning-soft);
+      border: 1px solid rgba(146, 64, 14, 0.20);
+      color: #78350f;
+      font-size: 14px;
+    }
+
+    .question.checked .explanation {
+      display: block;
+    }
+
+    .btn {
+      appearance: none;
+      border: 0;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 850;
+      font-size: 14px;
+      transition: transform 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #2563eb);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(29, 78, 216, 0.22);
+    }
+
+    .result-panel {
+      display: none;
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--primary-soft);
+      border: 1px solid rgba(29, 78, 216, 0.18);
+      color: var(--primary);
+      font-size: 14px;
+    }
+
+    .result-panel.show {
+      display: block;
+    }
+
+    .floating-up {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 50;
+      width: 48px;
+      height: 48px;
+      border-radius: 17px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.16);
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    @media (max-width: 980px) {
+      .chapter-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .theory-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero {
+        padding: 30px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .page {
+        width: min(100% - 22px, var(--max));
+        padding-top: 14px;
+      }
+
+      .topbar {
+        border-radius: 22px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .top-actions {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding: 24px;
+        border-radius: 24px;
+      }
+
+      .chapter-grid,
+      .theory-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .content-block {
+        padding: 20px;
+        border-radius: 22px;
+      }
+
+      .test-box {
+        padding: 15px;
+      }
+
+      .question {
+        padding: 15px;
+      }
+
+      .question-title {
+        grid-template-columns: 32px 1fr;
+      }
+
+      .q-num {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a id="top"></a>
+
+  <div class="page">
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-mark">Э</div>
+        <div class="brand-text">
+          Сералиева А.М., Казиева А.Н. · Экономика және кәсіпкерлік негіздері · 2022
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <a class="pill" href="#blocks">Блоктар</a>
+        <a class="pill" href="#block-1">Экономика</a>
+        <a class="pill" href="#block-2">Макроэкономика</a>
+        <a class="pill" href="#block-3">Кәсіпкерлік</a>
+      </div>
+    </div>
+
+    <header class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Extra әдебиет · 2022 · Ашық каталог тақырыптары бойынша</div>
+
+        <h1>Сералиева А.М., Казиева А.Н. “Экономика және кәсіпкерлік негіздері”</h1>
+
+        <p>
+          Бұл сайт Сералиева А.М. және Казиева А.Н. “Основы экономики и предпринимательства”
+          оқу құралы бойынша ашық каталогта көрсетілген тақырыптарға сүйеніп жасалды.
+          Толық мәтін ашық қолжетімді болмағандықтан, сайт нақты тарауларды ойдан
+          шығармайды: материал тек ашық расталған тақырыптық бағыттар және КТ мазмұны
+          арқылы жүйеленеді.
+        </p>
+
+        <div class="hero-meta">
+          <span class="hero-chip">Алматы · Альманахъ · 2022</span>
+          <span class="hero-chip">218 бет</span>
+          <span class="hero-chip">КТ фильтрі бойынша</span>
+          <span class="hero-chip">1–3 дұрыс жауап</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="nav-panel" id="blocks">
+      <div class="nav-title">
+        <h2>Тақырыптық блоктар</h2>
+        <span>Толық оглавление жоқ, сондықтан тек ашық расталған тақырыптар алынды</span>
+      </div>
+
+      <div class="chapter-grid">
+        <a class="chapter-card" href="#block-1">
+          <span class="chapter-num">1</span>
+          <strong>Экономика негіздері</strong>
+          <small>Ресурстар, жүйелер, меншік, тауар өндірісі, ақша, бәсеке, фирмалар, еңбек және капитал нарығы</small>
+        </a>
+
+        <a class="chapter-card" href="#block-2">
+          <span class="chapter-num">2</span>
+          <strong>Макроэкономика және реттеу</strong>
+          <small>Ұлттық экономика, ҰШЖ, инфляция, бюджет, салық, банк-кредит жүйесі</small>
+        </a>
+
+        <a class="chapter-card" href="#block-3">
+          <span class="chapter-num">3</span>
+          <strong>Кәсіпкерлік негіздері</strong>
+          <small>Кәсіпкерлік қызмет, қаржылық жоспарлау, ЖШС, бизнес-жоспар, франчайзинг</small>
+        </a>
+
+        <a class="chapter-card" href="#block-4">
+          <span class="chapter-num">4</span>
+          <strong>Басқару және тәуекелдер</strong>
+          <small>Персоналды басқару, кәсіпкерлік тәуекел, сақтандыру және бизнес қауіпсіздігі</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="block-1">
+      <div class="content-block">
+        <div class="section-kicker">1-блок · Экономика негіздері</div>
+        <h3>Ресурстар, экономикалық жүйелер, меншік, нарық және фирмалар</h3>
+
+        <p>
+          Бұл блокта экономиканың негізгі ұғымдары, экономикалық ресурстар,
+          экономикалық жүйелер, меншік, тауар өндірісі, ақша айналысы, бәсеке,
+          фирма, еңбек нарығы және капитал нарығы қарастырылады. Материал
+          кәсіпкерлік пен бизнесті түсіну үшін базалық экономикалық негіз ретінде
+          берілді.
+        </p>
+
+        <div class="note">
+          КТ фильтрі бойынша бұл блок мына тақырыптарға сәйкес келеді:
+          экономикалық ресурстар, өндіріс факторлары, нарықтық қатынастар,
+          меншік, бәсеке, фирма, еңбек ресурстары, капитал, ақша айналысы және
+          кәсіпкерлік қызметтің экономикалық ортасы.
+        </div>
+
+        <div class="theory-grid">
+          <div class="theory-card">
+            <strong>Экономика мәні</strong>
+            <p>
+              Экономика қоғамның шектеулі ресурстарды пайдаланып, адамдардың
+              қажеттіліктерін қанағаттандыру үшін тауарлар мен қызметтер өндіру,
+              бөлу, айырбастау және тұтыну үдерістерін зерттейді.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Экономикалық ресурстар</strong>
+            <p>
+              Экономикалық ресурстар — өндірісте қолданылатын табиғи, еңбек,
+              капиталдық, кәсіпкерлік және ақпараттық мүмкіндіктер жиынтығы.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Ресурстардың шектеулілігі</strong>
+            <p>
+              Ресурстар шектеулі болғандықтан, экономикада таңдау мәселесі туындайды:
+              қандай өнім өндіру, қалай өндіру және кім үшін өндіру сұрақтары шешіледі.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Өндіріс факторлары</strong>
+            <p>
+              Өндіріс факторларына жер, еңбек, капитал және кәсіпкерлік қабілет
+              жатады; қазіргі экономикада ақпарат пен технология да маңызды ресурс
+              ретінде қарастырылады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Экономикалық жүйе</strong>
+            <p>
+              Экономикалық жүйе — ресурстарды пайдалану, өндірісті ұйымдастыру,
+              меншік қатынастарын реттеу және игіліктерді бөлу тәсілдерінің жиынтығы.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Дәстүрлі жүйе</strong>
+            <p>
+              Дәстүрлі экономикалық жүйеде өндіріс пен бөлу әдет-ғұрыпқа, дәстүрге
+              және бұрыннан қалыптасқан шаруашылық тәжірибесіне сүйенеді.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Әкімшілік-әміршіл жүйе</strong>
+            <p>
+              Әкімшілік-әміршіл жүйеде негізгі экономикалық шешімдер орталықтан
+              қабылданады, ал өндіріс көлемі мен ресурстарды бөлу жоспар арқылы
+              реттеледі.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Нарықтық жүйе</strong>
+            <p>
+              Нарықтық экономикалық жүйеде өндірушілер мен тұтынушылар шешімдері
+              сұраныс, ұсыныс, баға және бәсеке арқылы үйлестіріледі.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Аралас экономика</strong>
+            <p>
+              Аралас экономикада нарықтық механизмдер мен мемлекеттік реттеу қатар
+              қолданылады; мемлекет әлеуметтік тұрақтылық, құқықтық тәртіп және
+              қоғамдық игіліктер үшін араласады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Меншік</strong>
+            <p>
+              Меншік экономикалық ресурстарды иелену, пайдалану және билік ету
+              қатынастарын білдіреді; ол кәсіпкерлік қызметтің құқықтық және
+              экономикалық негізін құрайды.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Меншік формалары</strong>
+            <p>
+              Меншік жеке, мемлекеттік, ұжымдық немесе аралас формада болуы мүмкін;
+              меншік формасы кәсіпорынның басқарылуына және табыс бөлу тәртібіне
+              әсер етеді.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Тауар өндірісі</strong>
+            <p>
+              Тауар өндірісі өнімнің өндірушінің өз тұтынуы үшін емес, нарықта
+              айырбастау немесе сату үшін жасалуын білдіреді.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Ақша айналысы</strong>
+            <p>
+              Ақша айналысы тауарлар, қызметтер және қаржылық міндеттемелер бойынша
+              төлем жасауға қызмет ететін ақша қозғалысын білдіреді.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Ақшаның қызметтері</strong>
+            <p>
+              Ақша құн өлшемі, айналыс құралы, төлем құралы, жинақтау құралы және
+              әлемдік ақша қызметтерін атқарады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Бәсеке</strong>
+            <p>
+              Бәсеке — нарық қатысушыларының тұтынушы, ресурс, нарық үлесі және
+              пайда үшін күресі; ол кәсіпорындарды тиімділікке, сапаға және жаңашылдыққа
+              итермелейді.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Бәсекенің рөлі</strong>
+            <p>
+              Бәсеке бағаға, өнім сапасына, шығындарды төмендетуге, технологияны
+              жаңартуға және тұтынушыға жақсы ұсыныс жасауға әсер етеді.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Фирма</strong>
+            <p>
+              Фирма — тауар немесе қызмет өндіру арқылы табыс алуға бағытталған
+              шаруашылық субъектісі; ол ресурстарды біріктіріп, нарыққа өнім ұсынады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Фирманың мақсаты</strong>
+            <p>
+              Фирманың негізгі мақсаттары табыс алу, нарықта тұрақтану, шығынды
+              оңтайландыру, тұтынушы қажеттілігін қанағаттандыру және бәсекеге
+              қабілеттілікті арттыру болуы мүмкін.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Еңбек нарығы</strong>
+            <p>
+              Еңбек нарығында жұмыс күші ұсынылады және оған сұраныс қалыптасады;
+              жалақы еңбекке сұраныс пен ұсыныс, біліктілік және өнімділікке байланысты.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Капитал нарығы</strong>
+            <p>
+              Капитал нарығы инвестициялық ресурстарды, қарыз қаражатты және ұзақ
+              мерзімді қаржыландыру құралдарын қозғалысқа келтіреді.
+            </p>
+          </div>
+        </div>
+
+        <div class="test-box" data-test="seralieva-block-1-test">
+          <h3>Тест тапсырмалары</h3>
+          <p class="section-desc">
+            Бір, екі немесе үш дұрыс жауап болуы мүмкін. Барлық дұрыс жауапты белгілеңіз.
+          </p>
+
+          <div class="question" data-answer="B,E">
+            <div class="question-title">
+              <div class="q-num">1</div>
+              <div class="q-text">Экономиканың негізгі зерттеу нысандары</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек кәсіпорын логотипін таңдау және жарнама мәтінін жазу</label>
+              <label class="option"><input type="checkbox" value="B"> Шектеулі ресурстарды пайдалану арқылы қажеттіліктерді қанағаттандыру</label>
+              <label class="option"><input type="checkbox" value="C"> Тек қызметкерлердің демалыс кестесін бекіту</label>
+              <label class="option"><input type="checkbox" value="D"> Тек өнім атауының нарықтағы дыбысталуын бағалау</label>
+              <label class="option"><input type="checkbox" value="E"> Тауарлар мен қызметтерді өндіру, бөлу, айырбастау және тұтыну</label>
+              <label class="option"><input type="checkbox" value="F"> Тек кеңсе интерьерін қаржылық есептен бөлек жоспарлау</label>
+              <label class="option"><input type="checkbox" value="G"> Тек кәсіпорынның әлеуметтік желідегі безендірілуін басқару</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E. Экономика шектеулі ресурстар жағдайында
+              қажеттіліктерді қанағаттандыруды, сондай-ақ өндіру, бөлу, айырбастау
+              және тұтыну үдерістерін зерттейді.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D,F">
+            <div class="question-title">
+              <div class="q-num">2</div>
+              <div class="q-text">Экономикалық ресурстарға жататын элементтер</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Табиғи ресурстар және еңбек ресурстары</label>
+              <label class="option"><input type="checkbox" value="B"> Тек жарнамалық ұрандар мен бренд түсі</label>
+              <label class="option"><input type="checkbox" value="C"> Тек тұтынушының жеке талғамы</label>
+              <label class="option"><input type="checkbox" value="D"> Капиталдық ресурстар және кәсіпкерлік қабілет</label>
+              <label class="option"><input type="checkbox" value="E"> Тек кеңсе жиһазының сыртқы дизайны</label>
+              <label class="option"><input type="checkbox" value="F"> Ақпараттық және технологиялық мүмкіндіктер</label>
+              <label class="option"><input type="checkbox" value="G"> Тек құжаттың қаріп өлшемі</label>
+              <label class="option"><input type="checkbox" value="H"> Тек өнім атауының қысқалығы</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D, F. Экономикалық ресурстарға табиғи, еңбек,
+              капиталдық, кәсіпкерлік, ақпараттық және технологиялық ресурстар жатады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F">
+            <div class="question-title">
+              <div class="q-num">3</div>
+              <div class="q-text">Ресурстардың шектеулілігі қандай экономикалық мәселені туындатады?</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Барлық қажеттіліктерді еш таңдаусыз толық қанағаттандыру мүмкіндігін</label>
+              <label class="option"><input type="checkbox" value="B"> Өндіріс факторларын қолданбай тауар өндіру мүмкіндігін</label>
+              <label class="option"><input type="checkbox" value="C"> Қандай өнімді, қалай және кім үшін өндіру керектігін таңдау қажеттілігін</label>
+              <label class="option"><input type="checkbox" value="D"> Нарықтық бағаны толық елемеу мүмкіндігін</label>
+              <label class="option"><input type="checkbox" value="E"> Кәсіпкерлік тәуекелдің толық жойылуын</label>
+              <label class="option"><input type="checkbox" value="F"> Балама мүмкіндіктер арасынан тиімді шешім қабылдау қажеттілігін</label>
+              <label class="option"><input type="checkbox" value="G"> Ресурстарды жоспарлаудың қажетсіз болуын</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F. Ресурстар шектеулі болғандықтан, қоғам мен кәсіпорын
+              не өндіру, қалай өндіру және кім үшін өндіру туралы таңдау жасайды.
+            </div>
+          </div>
+
+          <div class="question" data-answer="B,E,G">
+            <div class="question-title">
+              <div class="q-num">4</div>
+              <div class="q-text">Өндіріс факторлары ретінде қарастырылатын ресурстар</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек дайын өнім атауы</label>
+              <label class="option"><input type="checkbox" value="B"> Жер және табиғи ресурстар</label>
+              <label class="option"><input type="checkbox" value="C"> Тек жарнамалық мәтін</label>
+              <label class="option"><input type="checkbox" value="D"> Тек тұтынушы пікірлері</label>
+              <label class="option"><input type="checkbox" value="E"> Еңбек және капитал</label>
+              <label class="option"><input type="checkbox" value="F"> Тек кеңсе орналасқан аудан</label>
+              <label class="option"><input type="checkbox" value="G"> Кәсіпкерлік қабілет</label>
+              <label class="option"><input type="checkbox" value="H"> Тек әлеуметтік желі белсенділігі</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E, G. Өндіріс факторларына жер, еңбек, капитал және
+              кәсіпкерлік қабілет жатады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D">
+            <div class="question-title">
+              <div class="q-num">5</div>
+              <div class="q-text">Экономикалық жүйенің мазмұны</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Ресурстарды пайдалану және өндірісті ұйымдастыру тәсілдері</label>
+              <label class="option"><input type="checkbox" value="B"> Тек фирма атауын тіркеу рәсімі</label>
+              <label class="option"><input type="checkbox" value="C"> Тек еңбек шарттарының мәтіндік формасы</label>
+              <label class="option"><input type="checkbox" value="D"> Меншік қатынастарын реттеу және игіліктерді бөлу тәртібі</label>
+              <label class="option"><input type="checkbox" value="E"> Тек өнім қаптамасын таңдау жүйесі</label>
+              <label class="option"><input type="checkbox" value="F"> Тек салық декларациясын толтыру үлгісі</label>
+              <label class="option"><input type="checkbox" value="G"> Тек кәсіпорынның ішкі ұраны</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D. Экономикалық жүйе ресурстарды пайдалану, өндірісті
+              ұйымдастыру, меншік қатынастарын реттеу және игіліктерді бөлу тәсілдерін
+              қамтиды.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F">
+            <div class="question-title">
+              <div class="q-num">6</div>
+              <div class="q-text">Нарықтық экономикалық жүйеге тән белгілер</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Барлық өндіріс көлемін тек орталық жоспар бекітеді</label>
+              <label class="option"><input type="checkbox" value="B"> Өндіріс тек дәстүр мен әдет-ғұрып арқылы реттеледі</label>
+              <label class="option"><input type="checkbox" value="C"> Сұраныс пен ұсыныс баға қалыптастыруға әсер етеді</label>
+              <label class="option"><input type="checkbox" value="D"> Тұтынушы таңдауы экономикалық шешімге әсер етпейді</label>
+              <label class="option"><input type="checkbox" value="E"> Бәсеке нарықтық тәртіпте маңызды рөл атқармайды</label>
+              <label class="option"><input type="checkbox" value="F"> Өндірушілер мен тұтынушылар шешімі нарық арқылы үйлестіріледі</label>
+              <label class="option"><input type="checkbox" value="G"> Барлық кәсіпорындар бір ғана мемлекеттік жоспармен жұмыс істейді</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F. Нарықтық жүйеде сұраныс, ұсыныс, баға және бәсеке
+              өндірушілер мен тұтынушылар шешімдерін үйлестіреді.
+            </div>
+          </div>
+
+          <div class="question" data-answer="B,E,G">
+            <div class="question-title">
+              <div class="q-num">7</div>
+              <div class="q-text">Аралас экономикаға тән белгілер</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Мемлекеттік реттеу толық жойылады</label>
+              <label class="option"><input type="checkbox" value="B"> Нарықтық механизмдер мен мемлекеттік реттеу қатар қолданылады</label>
+              <label class="option"><input type="checkbox" value="C"> Барлық шешім тек әдет-ғұрып негізінде қабылданады</label>
+              <label class="option"><input type="checkbox" value="D"> Жеке меншік пен кәсіпкерлік толық тыйым салынады</label>
+              <label class="option"><input type="checkbox" value="E"> Мемлекет қоғамдық игіліктер мен әлеуметтік тұрақтылыққа қатысады</label>
+              <label class="option"><input type="checkbox" value="F"> Баға мен бәсеке мүлде қолданылмайды</label>
+              <label class="option"><input type="checkbox" value="G"> Құқықтық тәртіп пен нарықтық қатынастар бірге маңызды болады</label>
+              <label class="option"><input type="checkbox" value="H"> Барлық кәсіпорын тек бір меншік формасында болады</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E, G. Аралас экономика нарықтық механизмдер мен
+              мемлекеттік реттеуді біріктіреді; мемлекет құқықтық тәртіп, әлеуметтік
+              тұрақтылық және қоғамдық игіліктер үшін араласады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D,F">
+            <div class="question-title">
+              <div class="q-num">8</div>
+              <div class="q-text">Меншік қатынастарының экономикалық мазмұны</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Экономикалық ресурстарды иелену қатынасы</label>
+              <label class="option"><input type="checkbox" value="B"> Тек өнімнің жарнамалық атауын бекіту</label>
+              <label class="option"><input type="checkbox" value="C"> Тек еңбек нарығындағы жалақы мөлшерін бақылау</label>
+              <label class="option"><input type="checkbox" value="D"> Ресурстарды пайдалану және билік ету қатынасы</label>
+              <label class="option"><input type="checkbox" value="E"> Тек кәсіпорынның сыртқы стилін таңдау</label>
+              <label class="option"><input type="checkbox" value="F"> Кәсіпкерлік қызметтің құқықтық және экономикалық негізі</label>
+              <label class="option"><input type="checkbox" value="G"> Тек ақша айналысындағы қолма-қол төлем түрі</label>
+              <label class="option"><input type="checkbox" value="H"> Тек тауар қаптамасын бақылау құралы</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D, F. Меншік ресурстарды иелену, пайдалану және
+              билік ету қатынастарын білдіреді және кәсіпкерлік қызметтің негізін құрайды.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F">
+            <div class="question-title">
+              <div class="q-num">9</div>
+              <div class="q-text">Тауар өндірісінің негізгі белгісі</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Өнім тек өндірушінің жеке тұтынуы үшін жасалады</label>
+              <label class="option"><input type="checkbox" value="B"> Өнім айырбасқа немесе сатуға арналмайды</label>
+              <label class="option"><input type="checkbox" value="C"> Өнім нарықта айырбастау немесе сату үшін өндіріледі</label>
+              <label class="option"><input type="checkbox" value="D"> Өндіріс ақшалай қатынастарсыз ғана жүреді</label>
+              <label class="option"><input type="checkbox" value="E"> Тауар өндірісінде тұтынушы қажеттілігі ескерілмейді</label>
+              <label class="option"><input type="checkbox" value="F"> Өндіруші өнімді нарықтық қатынасқа енгізеді</label>
+              <label class="option"><input type="checkbox" value="G"> Тауар тек мемлекеттік жоспар үшін жасалады</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F. Тауар өндірісінде өнім өндірушінің жеке тұтынуы
+              үшін емес, нарықта айырбастау немесе сату үшін жасалады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="B,E,G">
+            <div class="question-title">
+              <div class="q-num">10</div>
+              <div class="q-text">Ақшаның негізгі қызметтері</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек өндірістік жабдықты сақтау қызметі</label>
+              <label class="option"><input type="checkbox" value="B"> Құн өлшемі және айналыс құралы</label>
+              <label class="option"><input type="checkbox" value="C"> Тек еңбек келісімін тіркеу құралы</label>
+              <label class="option"><input type="checkbox" value="D"> Тек фирманың ұйымдық құрылымын белгілеу қызметі</label>
+              <label class="option"><input type="checkbox" value="E"> Төлем құралы және жинақтау құралы</label>
+              <label class="option"><input type="checkbox" value="F"> Тек өнімнің сапасын бақылау құралы</label>
+              <label class="option"><input type="checkbox" value="G"> Әлемдік ақша қызметі</label>
+              <label class="option"><input type="checkbox" value="H"> Тек бәсекені құқықтық шектеу құралы</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E, G. Ақша құн өлшемі, айналыс құралы, төлем құралы,
+              жинақтау құралы және әлемдік ақша қызметтерін атқарады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D">
+            <div class="question-title">
+              <div class="q-num">11</div>
+              <div class="q-text">Бәсекенің нарықтағы рөлі</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Кәсіпорындарды тиімділік пен сапаны арттыруға итермелейді</label>
+              <label class="option"><input type="checkbox" value="B"> Барлық фирмаларды бірдей баға мен бірдей өнімге мәжбүрлейді</label>
+              <label class="option"><input type="checkbox" value="C"> Тұтынушы таңдауын толық жояды</label>
+              <label class="option"><input type="checkbox" value="D"> Шығындарды төмендетуге және жаңашылдыққа ынталандырады</label>
+              <label class="option"><input type="checkbox" value="E"> Нарықтағы өнім сапасына әсер етпейді</label>
+              <label class="option"><input type="checkbox" value="F"> Кәсіпкерлік қызметті тоқтатудың жалғыз себебі болады</label>
+              <label class="option"><input type="checkbox" value="G"> Баға қалыптасуына қатыспайды</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D. Бәсеке кәсіпорындарды сапаны арттыруға,
+              тиімділікті күшейтуге, шығынды азайтуға және жаңашылдыққа итермелейді.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F">
+            <div class="question-title">
+              <div class="q-num">12</div>
+              <div class="q-text">Фирманың нарықтық экономикадағы мазмұны</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек тұтынушылардың жеке шығынын есептейтін орган</label>
+              <label class="option"><input type="checkbox" value="B"> Тек мемлекеттік бюджетке салық жинайтын мекеме</label>
+              <label class="option"><input type="checkbox" value="C"> Тауар немесе қызмет өндіру арқылы табыс алуға бағытталған шаруашылық субъектісі</label>
+              <label class="option"><input type="checkbox" value="D"> Тек еңбек нарығындағы жұмыссыздықты тіркейтін ұйым</label>
+              <label class="option"><input type="checkbox" value="E"> Тек ақша айналысын реттейтін мемлекеттік институт</label>
+              <label class="option"><input type="checkbox" value="F"> Ресурстарды біріктіріп, нарыққа өнім ұсынатын ұйым</label>
+              <label class="option"><input type="checkbox" value="G"> Тек меншік формасын анықтайтын құжат</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F. Фирма ресурстарды біріктіріп, тауар немесе қызмет
+              өндіреді және нарыққа өнім ұсынып, табыс алуға ұмтылады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="B,E,G">
+            <div class="question-title">
+              <div class="q-num">13</div>
+              <div class="q-text">Фирманың негізгі экономикалық мақсаттары</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Нарықтағы сұранысты елемеу</label>
+              <label class="option"><input type="checkbox" value="B"> Табыс алу және нарықта тұрақтану</label>
+              <label class="option"><input type="checkbox" value="C"> Өндіріс шығындарын бақылаусыз көбейту</label>
+              <label class="option"><input type="checkbox" value="D"> Тұтынушы қажеттілігін бағаламау</label>
+              <label class="option"><input type="checkbox" value="E"> Шығынды оңтайландыру және бәсекеге қабілеттілікті арттыру</label>
+              <label class="option"><input type="checkbox" value="F"> Өнім сапасын төмендету арқылы ғана өсу</label>
+              <label class="option"><input type="checkbox" value="G"> Тұтынушы қажеттілігін қанағаттандыру</label>
+              <label class="option"><input type="checkbox" value="H"> Ақша айналысын тоқтату</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E, G. Фирма табыс алуға, нарықта орнығуға, шығынды
+              оңтайландыруға, тұтынушы қажеттілігін қанағаттандыруға және бәсекеге
+              қабілеттілікті арттыруға ұмтылады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D">
+            <div class="question-title">
+              <div class="q-num">14</div>
+              <div class="q-text">Еңбек нарығына тән белгілер</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Жұмыс күшіне сұраныс пен ұсыныс қалыптасады</label>
+              <label class="option"><input type="checkbox" value="B"> Тек тауар бағасы мен ақша массасы анықталады</label>
+              <label class="option"><input type="checkbox" value="C"> Еңбек ресурстары кәсіпорын қызметіне қатыспайды</label>
+              <label class="option"><input type="checkbox" value="D"> Жалақы біліктілік, өнімділік, сұраныс және ұсынысқа байланысты болады</label>
+              <label class="option"><input type="checkbox" value="E"> Тек капитал салымдарының табыстылығы өлшенеді</label>
+              <label class="option"><input type="checkbox" value="F"> Тек фирманың құқықтық формасы таңдалады</label>
+              <label class="option"><input type="checkbox" value="G"> Жұмыс күші нарықтық қатынастардан толық бөлек болады</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D. Еңбек нарығында жұмыс күшіне сұраныс пен ұсыныс
+              қалыптасады, ал жалақы біліктілікке, өнімділікке және нарық жағдайына
+              байланысты болады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F">
+            <div class="question-title">
+              <div class="q-num">15</div>
+              <div class="q-text">Капитал нарығының экономикалық қызметі</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек тұтынушылардың күнделікті шығынын тіркейді</label>
+              <label class="option"><input type="checkbox" value="B"> Тек еңбекақы мөлшерін әкімшілік жолмен бекітеді</label>
+              <label class="option"><input type="checkbox" value="C"> Инвестициялық ресурстар қозғалысын қамтамасыз етеді</label>
+              <label class="option"><input type="checkbox" value="D"> Тек тауар қаптамасын стандарттайды</label>
+              <label class="option"><input type="checkbox" value="E"> Тек қолма-қол ақша айналысын тоқтатады</label>
+              <label class="option"><input type="checkbox" value="F"> Қарыз қаражат пен ұзақ мерзімді қаржыландыру құралдарын байланыстырады</label>
+              <label class="option"><input type="checkbox" value="G"> Тек кәсіпорынның атауын тіркеуге арналған</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F. Капитал нарығы инвестициялық ресурстарды, қарыз
+              қаражатты және ұзақ мерзімді қаржыландыру құралдарын қозғалысқа келтіреді.
+            </div>
+          </div>
+
+          <button class="btn btn-primary" type="button" onclick="checkSection('seralieva-block-1-test')">
+            Нәтижені көрсету
+          </button>
+
+          <div class="result-panel" id="result-seralieva-block-1-test">
+            <strong>Нәтиже:</strong>
+            <span class="result-text">Жауаптар тексерілгеннен кейін нәтиже осы жерде көрсетіледі.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+        <section class="section" id="block-2">
+      <div class="content-block">
+        <div class="section-kicker">2-блок · Макроэкономика және мемлекеттік реттеу</div>
+        <h3>Ұлттық экономика, инфляция, бюджет, салық және банк-кредит жүйесі</h3>
+
+        <p>
+          Бұл блокта макроэкономика, ұлттық экономика, ұлттық шоттар жүйесі,
+          экономикалық дағдарыс, инфляция, мемлекеттік реттеу, мемлекеттік бюджет,
+          салықтар, кредит-банк жүйесі және экономикалық тұрақтылық мәселелері
+          қарастырылады. Материал кәсіпкерлік ортаны түсіну үшін қажет негізгі
+          макроэкономикалық ұғымдар арқылы берілді.
+        </p>
+
+        <div class="note">
+          КТ фильтрі бойынша бұл блок мына тақырыптарға сәйкес келеді:
+          макроэкономика, мемлекеттік реттеу, инфляция, бюджет, салық, банк,
+          кредит, ақша айналысы, қаржылық жүйе, кәсіпкерлік ортаның сыртқы
+          факторлары және экономикалық саясат.
+        </div>
+
+        <div class="theory-grid">
+          <div class="theory-card">
+            <strong>Макроэкономика мәні</strong>
+            <p>
+              Макроэкономика ұлттық экономика деңгейіндегі жалпы көрсеткіштерді,
+              өндіріс көлемін, жұмыспен қамтуды, инфляцияны, табысты, бюджетті,
+              ақша айналысын және экономикалық өсуді зерттейді.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Ұлттық экономика</strong>
+            <p>
+              Ұлттық экономика ел аумағындағы өндіріс, бөлу, айырбас және тұтыну
+              үдерістерінің, кәсіпорындар мен үй шаруашылықтарының, мемлекет пен
+              нарық институттарының өзара байланысқан жүйесі ретінде қарастырылады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Ұлттық шоттар жүйесі</strong>
+            <p>
+              Ұлттық шоттар жүйесі ел экономикасындағы өндіріс, табыс, тұтыну,
+              жинақтау және инвестиция қозғалысын статистикалық түрде есепке алуға
+              арналған көрсеткіштер жүйесі.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>ЖІӨ</strong>
+            <p>
+              Жалпы ішкі өнім белгілі бір кезең ішінде ел аумағында өндірілген соңғы
+              тауарлар мен қызметтердің нарықтық құнын сипаттайды.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Экономикалық өсу</strong>
+            <p>
+              Экономикалық өсу өндіріс көлемінің, ұлттық табыстың, еңбек өнімділігінің
+              және халықтың өмір сүру деңгейінің ұзақ мерзімді артуымен байланысты.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Экономикалық дағдарыс</strong>
+            <p>
+              Экономикалық дағдарыс өндірістің төмендеуі, жұмыссыздықтың өсуі,
+              табыстың азаюы, сұраныстың әлсіреуі және қаржылық тұрақсыздық арқылы
+              көрінуі мүмкін.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Инфляция</strong>
+            <p>
+              Инфляция ақша құнының төмендеуі және жалпы баға деңгейінің өсуі арқылы
+              байқалады; ол халықтың сатып алу қабілетіне, кәсіпорын шығындарына және
+              инвестициялық шешімдерге әсер етеді.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Инфляция себептері</strong>
+            <p>
+              Инфляция сұраныстың шамадан тыс өсуінен, өндіріс шығындарының артуынан,
+              ақша массасының көбеюінен және сыртқы экономикалық факторлардан туындауы
+              мүмкін.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Инфляция салдары</strong>
+            <p>
+              Инфляция нақты табыстың төмендеуіне, жинақтардың құнсыздануына,
+              кәсіпорын шығындарының өсуіне, баға белгілеудің қиындауына және
+              экономикалық белгісіздіктің артуына әкеледі.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Мемлекеттік реттеу</strong>
+            <p>
+              Мемлекеттік реттеу экономикадағы тұрақтылықты сақтау, нарықтағы
+              кемшіліктерді түзету, әлеуметтік қорғау, бәсекені қолдау және ұзақ
+              мерзімді даму үшін қолданылады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Реттеу құралдары</strong>
+            <p>
+              Мемлекет бюджет, салық, ақша-кредит саясаты, құқықтық нормалар,
+              мемлекеттік бағдарламалар, субсидиялар және бақылау құралдары арқылы
+              экономикаға ықпал етеді.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Мемлекеттік бюджет</strong>
+            <p>
+              Мемлекеттік бюджет — мемлекеттің кірістері мен шығыстарының негізгі
+              қаржылық жоспары; ол қоғамдық қажеттіліктерді қаржыландыруға және
+              экономикалық саясатты іске асыруға қызмет етеді.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Бюджет кірістері</strong>
+            <p>
+              Бюджет кірістері салықтардан, алымдардан, мемлекеттік мүліктен түсетін
+              табыстардан және басқа да түсімдерден қалыптасады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Бюджет шығыстары</strong>
+            <p>
+              Бюджет шығыстары білім беру, денсаулық сақтау, әлеуметтік қорғау,
+              инфрақұрылым, мемлекеттік басқару, қауіпсіздік және экономиканы қолдау
+              бағыттарына жұмсалады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Салықтар</strong>
+            <p>
+              Салықтар мемлекетке міндетті түрде төленетін төлемдер болып табылады;
+              олар бюджет кірістерін қалыптастырады және экономикалық мінез-құлыққа
+              реттеуші әсер етеді.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Салық функциялары</strong>
+            <p>
+              Салықтардың фискалдық, реттеушілік, қайта бөлу және бақылау функциялары
+              бар: олар бюджет толтырады, экономикалық белсенділікке ықпал етеді және
+              табыстарды қайта бөлуге қатысады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Тікелей салықтар</strong>
+            <p>
+              Тікелей салықтар табысқа, пайдаға немесе мүлікке салынады және салық
+              төлеушінің қаржылық нәтижесімен тікелей байланысты болады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Жанама салықтар</strong>
+            <p>
+              Жанама салықтар тауарлар мен қызметтердің бағасына қосылады; оларды
+              тұтынушы баға арқылы төлейді, ал кәсіпкер бюджетке аударады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Банк жүйесі</strong>
+            <p>
+              Банк жүйесі ақша қаражаттарын жинақтау, орналастыру, кредит беру,
+              есеп айырысу және қаржылық делдалдық қызметтерін жүзеге асыратын
+              институттар жиынтығы.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Кредит</strong>
+            <p>
+              Кредит — қайтарымдылық, мерзімділік және ақылылық шарттарымен берілетін
+              қарыз қаражат; ол кәсіпкерлік қызметті кеңейтуге және ағымдағы
+              қажеттіліктерді қаржыландыруға мүмкіндік береді.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Кредит тәуекелі</strong>
+            <p>
+              Кредит алу кәсіпорынға қосымша ресурс береді, бірақ пайыз төлеу,
+              қарызды уақытында қайтару және қаржылық тұрақтылықты сақтау міндетін
+              күшейтеді.
+            </p>
+          </div>
+        </div>
+
+        <div class="test-box" data-test="seralieva-block-2-test">
+          <h3>Тест тапсырмалары</h3>
+          <p class="section-desc">
+            Бір, екі немесе үш дұрыс жауап болуы мүмкін. Барлық дұрыс жауапты белгілеңіз.
+          </p>
+
+          <div class="question" data-answer="B,E">
+            <div class="question-title">
+              <div class="q-num">1</div>
+              <div class="q-text">Макроэкономика зерттейтін негізгі көрсеткіштер</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек жеке фирманың логотипі мен жарнама стилі</label>
+              <label class="option"><input type="checkbox" value="B"> Ұлттық өндіріс көлемі, жұмыспен қамту және инфляция</label>
+              <label class="option"><input type="checkbox" value="C"> Тек бір қызметкердің жеке еңбек шарты</label>
+              <label class="option"><input type="checkbox" value="D"> Тек өнім қаптамасы мен фирмалық түстер</label>
+              <label class="option"><input type="checkbox" value="E"> Ұлттық табыс, бюджет, ақша айналысы және экономикалық өсу</label>
+              <label class="option"><input type="checkbox" value="F"> Тек кеңсе бөлмелерінің орналасуы</label>
+              <label class="option"><input type="checkbox" value="G"> Тек тауар атауының нарықтағы дыбысталуы</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E. Макроэкономика жеке фирма деңгейін емес, ұлттық
+              экономика деңгейіндегі өндіріс, жұмыспен қамту, инфляция, табыс, бюджет,
+              ақша айналысы және экономикалық өсу сияқты жалпы көрсеткіштерді зерттейді.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D,F">
+            <div class="question-title">
+              <div class="q-num">2</div>
+              <div class="q-text">Ұлттық экономиканың құрамына кіретін субъектілер мен үдерістер</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Кәсіпорындар мен үй шаруашылықтары</label>
+              <label class="option"><input type="checkbox" value="B"> Тек бір фирманың ішкі ережелері</label>
+              <label class="option"><input type="checkbox" value="C"> Тек әлеуметтік желідегі жарнама парақшалары</label>
+              <label class="option"><input type="checkbox" value="D"> Мемлекет және нарық институттары</label>
+              <label class="option"><input type="checkbox" value="E"> Тек кеңсе жиһазы мен жабдықтары</label>
+              <label class="option"><input type="checkbox" value="F"> Өндіріс, бөлу, айырбас және тұтыну үдерістері</label>
+              <label class="option"><input type="checkbox" value="G"> Тек тауар белгісін тіркеу құжаттары</label>
+              <label class="option"><input type="checkbox" value="H"> Тек кәсіпорынның ішкі ұраны</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D, F. Ұлттық экономика кәсіпорындар, үй шаруашылықтары,
+              мемлекет, нарық институттары және өндіріс, бөлу, айырбас, тұтыну
+              үдерістерінің өзара байланысқан жүйесі ретінде қарастырылады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F">
+            <div class="question-title">
+              <div class="q-num">3</div>
+              <div class="q-text">Ұлттық шоттар жүйесінің мақсаты</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек жеке кәсіпкердің күнделікті жұмыс кестесін бекіту</label>
+              <label class="option"><input type="checkbox" value="B"> Тек кәсіпорынның бренд атауын статистикаға енгізу</label>
+              <label class="option"><input type="checkbox" value="C"> Ел экономикасындағы өндіріс пен табыс қозғалысын есепке алу</label>
+              <label class="option"><input type="checkbox" value="D"> Тек тауардың сыртқы дизайнын бағалау</label>
+              <label class="option"><input type="checkbox" value="E"> Тек еңбек шарттарының мәтінін сақтау</label>
+              <label class="option"><input type="checkbox" value="F"> Тұтыну, жинақтау және инвестиция көрсеткіштерін жүйелеу</label>
+              <label class="option"><input type="checkbox" value="G"> Тек жарнамалық шығындарды көркемдеу</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F. Ұлттық шоттар жүйесі ұлттық экономикадағы өндіріс,
+              табыс, тұтыну, жинақтау және инвестиция қозғалысын статистикалық түрде
+              есепке алуға арналған.
+            </div>
+          </div>
+
+          <div class="question" data-answer="B,E">
+            <div class="question-title">
+              <div class="q-num">4</div>
+              <div class="q-text">Жалпы ішкі өнімнің мазмұны</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Елдегі барлық аралық тауарлардың екі рет есептелген құны</label>
+              <label class="option"><input type="checkbox" value="B"> Ел аумағында өндірілген соңғы тауарлар мен қызметтердің нарықтық құны</label>
+              <label class="option"><input type="checkbox" value="C"> Тек мемлекеттік мекемелердің кеңсе шығындарының сомасы</label>
+              <label class="option"><input type="checkbox" value="D"> Тек импортталған тауарлардың қоймадағы құны</label>
+              <label class="option"><input type="checkbox" value="E"> Белгілі бір кезеңдегі ұлттық өндіріс нәтижесін сипаттайтын көрсеткіш</label>
+              <label class="option"><input type="checkbox" value="F"> Тек кәсіпорынның жеке жарнамалық табысы</label>
+              <label class="option"><input type="checkbox" value="G"> Тек халықтың жеке қарыздарының жиынтығы</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E. ЖІӨ белгілі бір кезең ішінде ел аумағында өндірілген
+              соңғы тауарлар мен қызметтердің нарықтық құнын және ұлттық өндіріс нәтижесін
+              сипаттайды.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D,G">
+            <div class="question-title">
+              <div class="q-num">5</div>
+              <div class="q-text">Экономикалық дағдарыстың көріністері</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Өндіріс көлемінің төмендеуі</label>
+              <label class="option"><input type="checkbox" value="B"> Барлық кәсіпорын пайдасының бірдей өсуі</label>
+              <label class="option"><input type="checkbox" value="C"> Жұмыссыздықтың толық жойылуы</label>
+              <label class="option"><input type="checkbox" value="D"> Жұмыссыздықтың өсуі және табыстың азаюы</label>
+              <label class="option"><input type="checkbox" value="E"> Сұраныстың шексіз артуы</label>
+              <label class="option"><input type="checkbox" value="F"> Қаржылық тұрақсыздықтың толық болмауы</label>
+              <label class="option"><input type="checkbox" value="G"> Сұраныстың әлсіреуі және қаржылық тұрақсыздық</label>
+              <label class="option"><input type="checkbox" value="H"> Бағаның әрқашан төмендеп, табыстың өсуі</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D, G. Экономикалық дағдарыс өндірістің төмендеуі,
+              жұмыссыздықтың өсуі, табыстың азаюы, сұраныстың әлсіреуі және қаржылық
+              тұрақсыздық арқылы көрінуі мүмкін.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F">
+            <div class="question-title">
+              <div class="q-num">6</div>
+              <div class="q-text">Инфляцияның экономикалық мәні</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Ақша құнының тұрақты өсуі және бағаның толық төмендеуі</label>
+              <label class="option"><input type="checkbox" value="B"> Тек кәсіпорынның өнім сапасының артуы</label>
+              <label class="option"><input type="checkbox" value="C"> Ақша құнының төмендеуі және жалпы баға деңгейінің өсуі</label>
+              <label class="option"><input type="checkbox" value="D"> Тек еңбек нарығындағы бос орындар санының көбеюі</label>
+              <label class="option"><input type="checkbox" value="E"> Барлық тауарлар бағасының өзгермей қалуы</label>
+              <label class="option"><input type="checkbox" value="F"> Халықтың сатып алу қабілетіне әсер ететін үдеріс</label>
+              <label class="option"><input type="checkbox" value="G"> Тек бюджет шығыстарының қысқаруы</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F. Инфляция ақша құнының төмендеуі және жалпы баға
+              деңгейінің өсуі арқылы байқалып, сатып алу қабілетіне әсер етеді.
+            </div>
+          </div>
+
+          <div class="question" data-answer="B,E,G">
+            <div class="question-title">
+              <div class="q-num">7</div>
+              <div class="q-text">Инфляцияның негізгі себептері</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Ақша массасының өзгеріссіз қалуы ғана</label>
+              <label class="option"><input type="checkbox" value="B"> Сұраныстың шамадан тыс өсуі</label>
+              <label class="option"><input type="checkbox" value="C"> Өндіріс шығындарының әрқашан төмендеуі</label>
+              <label class="option"><input type="checkbox" value="D"> Бағаның мемлекеттік есептен толық алынып тасталуы</label>
+              <label class="option"><input type="checkbox" value="E"> Өндіріс шығындарының артуы</label>
+              <label class="option"><input type="checkbox" value="F"> Кәсіпорындардың барлық шығынының нөлге тең болуы</label>
+              <label class="option"><input type="checkbox" value="G"> Ақша массасының көбеюі және сыртқы факторлар</label>
+              <label class="option"><input type="checkbox" value="H"> Халық табысының ешқашан өзгермеуі</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E, G. Инфляция сұраныстың артық өсуінен, өндіріс
+              шығындарының артуынан, ақша массасының көбеюінен және сыртқы факторлардан
+              туындауы мүмкін.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D,F">
+            <div class="question-title">
+              <div class="q-num">8</div>
+              <div class="q-text">Инфляцияның кәсіпкерлік қызметке ықпалы</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Кәсіпорын шығындарының өсуіне әсер етуі мүмкін</label>
+              <label class="option"><input type="checkbox" value="B"> Баға белгілеуді әрқашан жеңілдетеді</label>
+              <label class="option"><input type="checkbox" value="C"> Инвестициялық шешімдерге еш әсер етпейді</label>
+              <label class="option"><input type="checkbox" value="D"> Баға белгілеуді және жоспарлауды қиындатуы мүмкін</label>
+              <label class="option"><input type="checkbox" value="E"> Нақты табысты міндетті түрде арттырады</label>
+              <label class="option"><input type="checkbox" value="F"> Экономикалық белгісіздікті күшейтуі мүмкін</label>
+              <label class="option"><input type="checkbox" value="G"> Ақша құнын тұрақты сақтайды</label>
+              <label class="option"><input type="checkbox" value="H"> Кәсіпорынның барлық тәуекелін жояды</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D, F. Инфляция шығындарды өсіреді, баға белгілеу мен
+              жоспарлауды қиындатады және экономикалық белгісіздікті арттыруы мүмкін.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F">
+            <div class="question-title">
+              <div class="q-num">9</div>
+              <div class="q-text">Мемлекеттік реттеудің негізгі мақсаттары</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Нарықтағы барлық бәсекені толық жою</label>
+              <label class="option"><input type="checkbox" value="B"> Жеке кәсіпкерлік шешімдерді толық тоқтату</label>
+              <label class="option"><input type="checkbox" value="C"> Экономикалық тұрақтылықты сақтау және нарық кемшіліктерін түзету</label>
+              <label class="option"><input type="checkbox" value="D"> Баға мен сапаға байланысты барлық таңдауды жою</label>
+              <label class="option"><input type="checkbox" value="E"> Әлеуметтік қорғауды толық алып тастау</label>
+              <label class="option"><input type="checkbox" value="F"> Бәсекені қолдау және ұзақ мерзімді дамуға жағдай жасау</label>
+              <label class="option"><input type="checkbox" value="G"> Қоғамдық игіліктерді қаржыландырудан бас тарту</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F. Мемлекеттік реттеу тұрақтылықты сақтау, нарық
+              кемшіліктерін түзету, бәсекені қолдау және ұзақ мерзімді дамуды қамтамасыз
+              ету үшін қолданылады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="B,E,G">
+            <div class="question-title">
+              <div class="q-num">10</div>
+              <div class="q-text">Мемлекеттік реттеу құралдары</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек кәсіпорынның фирмалық түсін таңдау</label>
+              <label class="option"><input type="checkbox" value="B"> Бюджет және салық саясаты</label>
+              <label class="option"><input type="checkbox" value="C"> Тек әлеуметтік желі жарнамасының стилі</label>
+              <label class="option"><input type="checkbox" value="D"> Тек қызметкерлердің жеке хоббиін бақылау</label>
+              <label class="option"><input type="checkbox" value="E"> Ақша-кредит саясаты және құқықтық нормалар</label>
+              <label class="option"><input type="checkbox" value="F"> Тек тауар қаптамасын безендіру</label>
+              <label class="option"><input type="checkbox" value="G"> Мемлекеттік бағдарламалар, субсидиялар және бақылау құралдары</label>
+              <label class="option"><input type="checkbox" value="H"> Тек фирманың ішкі ұранын бекіту</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E, G. Мемлекет бюджет, салық, ақша-кредит саясаты,
+              құқықтық нормалар, мемлекеттік бағдарламалар, субсидиялар және бақылау
+              құралдары арқылы экономикаға ықпал етеді.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D">
+            <div class="question-title">
+              <div class="q-num">11</div>
+              <div class="q-text">Мемлекеттік бюджеттің мазмұны</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Мемлекеттің кірістері мен шығыстарының негізгі қаржылық жоспары</label>
+              <label class="option"><input type="checkbox" value="B"> Тек жеке фирманың маркетингтік жоспары</label>
+              <label class="option"><input type="checkbox" value="C"> Тек банк клиентінің депозиттік келісімі</label>
+              <label class="option"><input type="checkbox" value="D"> Қоғамдық қажеттіліктерді қаржыландыру құралы</label>
+              <label class="option"><input type="checkbox" value="E"> Тек еңбек нарығындағы жалақы кестесі</label>
+              <label class="option"><input type="checkbox" value="F"> Тек өнім бағасын анықтайтын жеке құжат</label>
+              <label class="option"><input type="checkbox" value="G"> Тек фирманың ішкі бухгалтерлік есебі</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D. Мемлекеттік бюджет мемлекеттің кірістері мен
+              шығыстарының қаржылық жоспары және қоғамдық қажеттіліктерді қаржыландыру
+              құралы болып табылады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F,G">
+            <div class="question-title">
+              <div class="q-num">12</div>
+              <div class="q-text">Бюджет кірістері мен шығыстарына қатысты дұрыс тұжырымдар</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Бюджет кірістері тек кәсіпорын логотипінен қалыптасады</label>
+              <label class="option"><input type="checkbox" value="B"> Бюджет шығыстары тек жеке фирманың пайдасын бөлуге жұмсалады</label>
+              <label class="option"><input type="checkbox" value="C"> Бюджет кірістерінің негізгі бөлігі салықтар мен алымдардан қалыптасады</label>
+              <label class="option"><input type="checkbox" value="D"> Бюджет шығыстары әлеуметтік салаға ешқашан бағытталмайды</label>
+              <label class="option"><input type="checkbox" value="E"> Бюджет кірістері мемлекеттік мүліктен түсетін табыстарды қамтымайды</label>
+              <label class="option"><input type="checkbox" value="F"> Бюджет шығыстары білім, денсаулық сақтау, әлеуметтік қорғау және инфрақұрылымға жұмсалуы мүмкін</label>
+              <label class="option"><input type="checkbox" value="G"> Бюджет экономиканы қолдау және мемлекеттік басқару шығындарын қамтуы мүмкін</label>
+              <label class="option"><input type="checkbox" value="H"> Бюджет шығыстары тек қолма-қол ақша айналысын тоқтатуға арналған</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F, G. Бюджет кірістері салықтардан, алымдардан және
+              басқа түсімдерден қалыптасады; шығыстар әлеуметтік салаға, инфрақұрылымға,
+              мемлекеттік басқаруға және экономиканы қолдауға бағытталады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="B,E">
+            <div class="question-title">
+              <div class="q-num">13</div>
+              <div class="q-text">Салықтардың негізгі қызметтері</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек кәсіпорын атауын тіркеу қызметі</label>
+              <label class="option"><input type="checkbox" value="B"> Бюджет кірістерін қалыптастыру қызметі</label>
+              <label class="option"><input type="checkbox" value="C"> Тек өнім сапасын техникалық өлшеу қызметі</label>
+              <label class="option"><input type="checkbox" value="D"> Тек еңбек шартын құрастыру қызметі</label>
+              <label class="option"><input type="checkbox" value="E"> Экономикалық белсенділікті реттеу және табыстарды қайта бөлу қызметі</label>
+              <label class="option"><input type="checkbox" value="F"> Тек фирманың жарнамалық бейнесін қалыптастыру қызметі</label>
+              <label class="option"><input type="checkbox" value="G"> Тек банк депозитінің пайызын есептеу қызметі</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E. Салықтар бюджет кірісін қалыптастырады, экономиканы
+              реттейді, табыстарды қайта бөлуге және бақылауға қатысады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D">
+            <div class="question-title">
+              <div class="q-num">14</div>
+              <div class="q-text">Тікелей және жанама салықтардың айырмашылығы</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тікелей салықтар табысқа, пайдаға немесе мүлікке салынады</label>
+              <label class="option"><input type="checkbox" value="B"> Тікелей салықтар тек тауар бағасына қосылып, тұтынушы арқылы төленеді</label>
+              <label class="option"><input type="checkbox" value="C"> Жанама салықтар кәсіпорынның мүлкіне ғана салынады</label>
+              <label class="option"><input type="checkbox" value="D"> Жанама салықтар тауарлар мен қызметтердің бағасына қосылады</label>
+              <label class="option"><input type="checkbox" value="E"> Тікелей салықтар мен жанама салықтардың айырмасы болмайды</label>
+              <label class="option"><input type="checkbox" value="F"> Жанама салықтарды бюджетке аудару кәсіпкерлікпен байланыспайды</label>
+              <label class="option"><input type="checkbox" value="G"> Тікелей салықтар тек қолма-қол ақша түрінде ғана төленеді</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D. Тікелей салықтар табыс, пайда немесе мүлікпен
+              байланысты; жанама салықтар тауарлар мен қызметтер бағасына қосылады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F">
+            <div class="question-title">
+              <div class="q-num">15</div>
+              <div class="q-text">Банк жүйесінің негізгі қызметтері</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек фирманың логотипін тіркеу</label>
+              <label class="option"><input type="checkbox" value="B"> Тек қызметкерлердің жұмыс уақытын бақылау</label>
+              <label class="option"><input type="checkbox" value="C"> Ақша қаражаттарын жинақтау және орналастыру</label>
+              <label class="option"><input type="checkbox" value="D"> Тек тауар қаптамасын стандарттау</label>
+              <label class="option"><input type="checkbox" value="E"> Тек өндірістік шикізат сапасын өлшеу</label>
+              <label class="option"><input type="checkbox" value="F"> Кредит беру, есеп айырысу және қаржылық делдалдық</label>
+              <label class="option"><input type="checkbox" value="G"> Тек кәсіпорынның жарнамалық науқанын өткізу</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F. Банк жүйесі ақша қаражаттарын жинақтау, орналастыру,
+              кредит беру, есеп айырысу және қаржылық делдалдық қызметтерін атқарады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="B,E,G">
+            <div class="question-title">
+              <div class="q-num">16</div>
+              <div class="q-text">Кредиттің негізгі белгілері</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Қайтарымсыз және мерзімсіз берілуі</label>
+              <label class="option"><input type="checkbox" value="B"> Қайтарымдылық шарты</label>
+              <label class="option"><input type="checkbox" value="C"> Пайызсыз және міндеттемесіз болуы</label>
+              <label class="option"><input type="checkbox" value="D"> Қарыз алушының қаржылық жауапкершілігін жоюы</label>
+              <label class="option"><input type="checkbox" value="E"> Мерзімділік және ақылылық шарты</label>
+              <label class="option"><input type="checkbox" value="F"> Кәсіпорынның барлық шығынын автоматты түрде жоюы</label>
+              <label class="option"><input type="checkbox" value="G"> Кәсіпкерлік қызметті қаржыландыру көзі болуы</label>
+              <label class="option"><input type="checkbox" value="H"> Тек меншік формасын анықтау құралы болуы</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E, G. Кредит қайтарымдылық, мерзімділік және ақылылық
+              шарттарымен беріледі және кәсіпкерлік қызметті қаржыландыру көзі бола алады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D,F">
+            <div class="question-title">
+              <div class="q-num">17</div>
+              <div class="q-text">Кредит алудың кәсіпорын үшін ықтимал әсерлері</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Қосымша қаржылық ресурс береді</label>
+              <label class="option"><input type="checkbox" value="B"> Қарызды қайтару міндетін толық жояды</label>
+              <label class="option"><input type="checkbox" value="C"> Пайыз төлеу қажеттілігін болдырмайды</label>
+              <label class="option"><input type="checkbox" value="D"> Пайыз төлеу және қарызды уақытында қайтару міндетін күшейтеді</label>
+              <label class="option"><input type="checkbox" value="E"> Қаржылық тұрақтылыққа ешқандай әсер етпейді</label>
+              <label class="option"><input type="checkbox" value="F"> Ағымдағы қажеттіліктерді немесе бизнесті кеңейтуді қаржыландыруға көмектеседі</label>
+              <label class="option"><input type="checkbox" value="G"> Барлық кәсіпкерлік тәуекелді автоматты түрде жояды</label>
+              <label class="option"><input type="checkbox" value="H"> Кәсіпорынды бюджетке салық төлеуден босатады</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D, F. Кредит кәсіпорынға қосымша ресурс береді және
+              бизнесті қаржыландыруға көмектеседі, бірақ пайыз төлеу мен қарызды қайтару
+              міндетін де күшейтеді.
+            </div>
+          </div>
+
+          <button class="btn btn-primary" type="button" onclick="checkSection('seralieva-block-2-test')">
+            Нәтижені көрсету
+          </button>
+
+          <div class="result-panel" id="result-seralieva-block-2-test">
+            <strong>Нәтиже:</strong>
+            <span class="result-text">Жауаптар тексерілгеннен кейін нәтиже осы жерде көрсетіледі.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+        <section class="section" id="block-3">
+      <div class="content-block">
+        <div class="section-kicker">3-блок · Кәсіпкерлік негіздері</div>
+        <h3>Кәсіпкерлік қызмет, қаржылық жоспарлау, ЖШС, бизнес-жоспар және франчайзинг</h3>
+
+        <p>
+          Бұл блокта кәсіпкерлік қызметтің мәні, кәсіпкерліктің жіктелуі,
+          кәсіпкерлік субъектілері, жауапкершілік, қаржылық жоспарлау,
+          жауапкершілігі шектеулі серіктестік құру, бизнес-жоспар және
+          франчайзинг қарастырылады. Материал кәсіп ашу, жоспарлау және
+          кәсіпкерлік шешім қабылдау логикасы бойынша жүйеленді.
+        </p>
+
+        <div class="note">
+          КТ фильтрі бойынша бұл блок мына тақырыптарға сәйкес келеді:
+          кәсіпкерлік қызмет, бизнес түрлері, ұйымдық-құқықтық форма,
+          ЖШС, қаржылық жоспарлау, бизнес-жоспар, нарық, шығын, табыс,
+          инвестиция, франчайзинг және кәсіпкерлік шешімдер.
+        </div>
+
+        <div class="theory-grid">
+          <div class="theory-card">
+            <strong>Кәсіпкерлік мәні</strong>
+            <p>
+              Кәсіпкерлік — пайда табу, нарық қажеттілігін қанағаттандыру және
+              экономикалық мүмкіндікті іске асыру мақсатында тәуекелмен жүргізілетін
+              дербес бастамашылық қызмет.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Кәсіпкерлік белгілері</strong>
+            <p>
+              Кәсіпкерлікке бастамашылық, дербестік, жауапкершілік, тәуекел,
+              жаңашылдық, нарыққа бағдарлану және пайда алуға ұмтылу тән.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Кәсіпкерлік субъектісі</strong>
+            <p>
+              Кәсіпкерлік субъектісі ретінде жеке кәсіпкер, заңды тұлға, шағын,
+              орта немесе ірі кәсіпорын, серіктестік және басқа шаруашылық ұйымдары
+              қарастырылуы мүмкін.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Кәсіпкерлік қызмет жіктелуі</strong>
+            <p>
+              Кәсіпкерлік өндірістік, коммерциялық, қаржылық, кеңестік, инновациялық
+              немесе делдалдық сипатта болуы мүмкін; жіктеу қызмет мазмұнына және
+              нарықтағы рөліне байланысты жүргізіледі.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Өндірістік кәсіпкерлік</strong>
+            <p>
+              Өндірістік кәсіпкерлік тауар өндіру, қызмет көрсету, жұмыс орындау
+              және жаңа өнім жасау арқылы табыс алуға бағытталады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Коммерциялық кәсіпкерлік</strong>
+            <p>
+              Коммерциялық кәсіпкерлік тауарды сатып алу, қайта сату, сауда айналымын
+              ұйымдастыру және нарықтағы сұранысқа сәйкес пайда табумен байланысты.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Қаржылық кәсіпкерлік</strong>
+            <p>
+              Қаржылық кәсіпкерлік ақша, бағалы қағаз, кредит, сақтандыру және
+              қаржылық құралдармен жасалатын операциялар арқылы табыс табуға бағытталады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Кеңестік кәсіпкерлік</strong>
+            <p>
+              Кеңестік кәсіпкерлік ақпарат, сараптама, басқару, құқықтық, қаржылық
+              немесе маркетингтік кеңес беру қызметтері арқылы жүзеге асады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Кәсіп ашу шешімі</strong>
+            <p>
+              Кәсіп ашу кезінде нарық сұранысы, ресурс мүмкіндігі, бастапқы капитал,
+              құқықтық форма, тәуекел, шығын, табыс және бәсеке жағдайы бағаланады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Ұйымдық-құқықтық форма</strong>
+            <p>
+              Ұйымдық-құқықтық форма кәсіпкердің жауапкершілігіне, басқару тәртібіне,
+              капитал қалыптастыруға, салық төлеуге және серіктестермен қатынасқа
+              әсер етеді.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>ЖШС мәні</strong>
+            <p>
+              Жауапкершілігі шектеулі серіктестік бірнеше қатысушының немесе бір
+              тұлғаның капиталы арқылы құрылып, қатысушылардың жауапкершілігі
+              салым көлемімен шектелетін ұйымдық-құқықтық форма ретінде түсіндіріледі.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>ЖШС құру</strong>
+            <p>
+              ЖШС құруда атау таңдау, құрылтай құжаттарын дайындау, қатысушылар
+              үлесін анықтау, мемлекеттік тіркеуден өту және қызметті ұйымдастыру
+              қадамдары маңызды.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Қаржылық жоспарлау</strong>
+            <p>
+              Қаржылық жоспарлау кәсіпкерлік жобаның кірісін, шығынын, пайдасын,
+              ақша ағындарын, қаржыландыру қажеттілігін және күтілетін нәтижесін
+              алдын ала есептеуге бағытталады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Қаржылық жоспарлау мақсаты</strong>
+            <p>
+              Қаржылық жоспарлау кәсіпкерге қаражат жеткіліктілігін бағалауға,
+              шығындарды бақылауға, табыс көздерін анықтауға және тәуекелді азайтуға
+              көмектеседі.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Бизнес-жоспар мәні</strong>
+            <p>
+              Бизнес-жоспар кәсіпкерлік идеяны нақты жобаға айналдыратын, нарық,
+              өнім, өндіріс, маркетинг, қаржы, тәуекел және басқару шешімдерін
+              жүйелейтін құжат.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Бизнес-жоспар бөлімдері</strong>
+            <p>
+              Бизнес-жоспарда жоба сипаттамасы, өнім немесе қызмет, нарық талдауы,
+              бәсеке, маркетинг жоспары, өндіріс жоспары, қаржылық жоспар және
+              тәуекелдер қарастырылады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Нарық талдауы</strong>
+            <p>
+              Нарық талдауы тұтынушыларды, сұранысты, бәсекелестерді, баға деңгейін,
+              нарық көлемін және өнімнің нарықтағы орнын анықтауға мүмкіндік береді.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Маркетинг жоспары</strong>
+            <p>
+              Маркетинг жоспары өнімді нарыққа шығару, баға белгілеу, өткізу арналары,
+              жарнама, тұтынушымен байланыс және сату стратегиясын қамтиды.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Қаржылық жоспар бөлімдері</strong>
+            <p>
+              Қаржылық жоспарда бастапқы инвестиция, тұрақты және айнымалы шығындар,
+              болжамды табыс, пайда, ақша ағыны, өзін-өзі ақтау мерзімі және қаржыландыру
+              көздері көрсетіледі.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Франчайзинг</strong>
+            <p>
+              Франчайзинг — дайын бизнес-модельді, брендті, технологияны және
+              тәжірибені белгілі бір шарттармен пайдалану арқылы кәсіп жүргізу тәсілі.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Франчайзер</strong>
+            <p>
+              Франчайзер бренд, бизнес-модель, технология, стандарттар және қолдау
+              ұсынатын тарап болып табылады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Франчайзи</strong>
+            <p>
+              Франчайзи франчайзердің брендін және бизнес жүйесін пайдаланып,
+              белгіленген төлемдер мен шарттар бойынша кәсіп жүргізетін тарап.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Франчайзинг артықшылықтары</strong>
+            <p>
+              Франчайзинг дайын брендті қолдануға, тәжірибе алуға, оқыту мен қолдау
+              көруге және нарыққа жылдамырақ кіруге мүмкіндік береді.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Франчайзинг шектеулері</strong>
+            <p>
+              Франчайзингте кәсіпкер белгіленген стандарттарды сақтауы, төлемдер
+              төлеуі және дербес шешім қабылдау еркіндігін белгілі деңгейде шектеуі
+              мүмкін.
+            </p>
+          </div>
+        </div>
+
+        <div class="test-box" data-test="seralieva-block-3-test">
+          <h3>Тест тапсырмалары</h3>
+          <p class="section-desc">
+            Бір, екі немесе үш дұрыс жауап болуы мүмкін. Барлық дұрыс жауапты белгілеңіз.
+          </p>
+
+          <div class="question" data-answer="B,E">
+            <div class="question-title">
+              <div class="q-num">1</div>
+              <div class="q-text">Кәсіпкерлік қызметтің негізгі мазмұны</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек дайын тауарды жеке тұтыну үшін сақтау</label>
+              <label class="option"><input type="checkbox" value="B"> Пайда табуға және нарық қажеттілігін қанағаттандыруға бағытталған дербес қызмет</label>
+              <label class="option"><input type="checkbox" value="C"> Тек мемлекеттік жоспар бойынша тәуекелсіз жұмыс істеу</label>
+              <label class="option"><input type="checkbox" value="D"> Тек қызметкерлердің демалыс кестесін бекіту</label>
+              <label class="option"><input type="checkbox" value="E"> Экономикалық мүмкіндікті іске асыру үшін тәуекелмен жүргізілетін бастамашылық қызмет</label>
+              <label class="option"><input type="checkbox" value="F"> Тек салық декларациясын техникалық толтыру</label>
+              <label class="option"><input type="checkbox" value="G"> Тек фирма атауын жарнамалық мақсатта таңдау</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E. Кәсіпкерлік пайда табу, нарық қажеттілігін
+              қанағаттандыру және экономикалық мүмкіндікті іске асыру мақсатында
+              тәуекелмен жүргізілетін дербес бастамашылық қызмет.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D,F">
+            <div class="question-title">
+              <div class="q-num">2</div>
+              <div class="q-text">Кәсіпкерлікке тән негізгі белгілер</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Бастамашылық және дербестік</label>
+              <label class="option"><input type="checkbox" value="B"> Тәуекелдің толық болмауы</label>
+              <label class="option"><input type="checkbox" value="C"> Нарық сұранысын елемеу</label>
+              <label class="option"><input type="checkbox" value="D"> Жауапкершілік және тәуекел</label>
+              <label class="option"><input type="checkbox" value="E"> Пайда алуға ұмтылмау</label>
+              <label class="option"><input type="checkbox" value="F"> Жаңашылдық және нарыққа бағдарлану</label>
+              <label class="option"><input type="checkbox" value="G"> Тек әкімшілік бұйрықпен жұмыс істеу</label>
+              <label class="option"><input type="checkbox" value="H"> Тек жеке тұтыну үшін өнім шығару</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D, F. Кәсіпкерлік бастамашылыққа, дербестікке,
+              жауапкершілікке, тәуекелге, жаңашылдыққа және нарыққа бағдарлануға сүйенеді.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F">
+            <div class="question-title">
+              <div class="q-num">3</div>
+              <div class="q-text">Кәсіпкерлік субъектілеріне жататындар</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек тұтынушының жеке сатып алу қалауы</label>
+              <label class="option"><input type="checkbox" value="B"> Тек өнімнің сыртқы қаптамасы</label>
+              <label class="option"><input type="checkbox" value="C"> Жеке кәсіпкер және заңды тұлға</label>
+              <label class="option"><input type="checkbox" value="D"> Тек фирманың жарнамалық ұраны</label>
+              <label class="option"><input type="checkbox" value="E"> Тек тауар белгісінің түсі</label>
+              <label class="option"><input type="checkbox" value="F"> Шағын, орта немесе ірі кәсіпорындар</label>
+              <label class="option"><input type="checkbox" value="G"> Тек нарықтағы баға деңгейі</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F. Кәсіпкерлік субъектілеріне жеке кәсіпкерлер,
+              заңды тұлғалар және шағын, орта, ірі кәсіпорындар жатады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="B,E,G">
+            <div class="question-title">
+              <div class="q-num">4</div>
+              <div class="q-text">Кәсіпкерлік қызмет түрлері</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек тұтынушының тұрмыстық таңдауы</label>
+              <label class="option"><input type="checkbox" value="B"> Өндірістік және коммерциялық кәсіпкерлік</label>
+              <label class="option"><input type="checkbox" value="C"> Тек кеңсе интерьерін ұйымдастыру</label>
+              <label class="option"><input type="checkbox" value="D"> Тек еңбек демалысын жоспарлау</label>
+              <label class="option"><input type="checkbox" value="E"> Қаржылық және кеңестік кәсіпкерлік</label>
+              <label class="option"><input type="checkbox" value="F"> Тек өнім атауын таңдау</label>
+              <label class="option"><input type="checkbox" value="G"> Инновациялық және делдалдық кәсіпкерлік</label>
+              <label class="option"><input type="checkbox" value="H"> Тек жарнамалық сурет дайындау</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E, G. Кәсіпкерлік өндірістік, коммерциялық, қаржылық,
+              кеңестік, инновациялық және делдалдық бағытта жіктелуі мүмкін.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D">
+            <div class="question-title">
+              <div class="q-num">5</div>
+              <div class="q-text">Өндірістік кәсіпкерліктің мазмұны</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тауар өндіру немесе қызмет көрсету арқылы табыс алу</label>
+              <label class="option"><input type="checkbox" value="B"> Тек дайын тауарды сатып алып қайта сату</label>
+              <label class="option"><input type="checkbox" value="C"> Тек бағалы қағаздармен операция жасау</label>
+              <label class="option"><input type="checkbox" value="D"> Жұмыс орындау немесе жаңа өнім жасау</label>
+              <label class="option"><input type="checkbox" value="E"> Тек кеңес беру арқылы табыс табу</label>
+              <label class="option"><input type="checkbox" value="F"> Тек банк кредитін рәсімдеу</label>
+              <label class="option"><input type="checkbox" value="G"> Тек делдалдық келісім жасау</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D. Өндірістік кәсіпкерлік тауар өндіру, қызмет көрсету,
+              жұмыс орындау немесе жаңа өнім жасау арқылы табыс алуға бағытталады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F">
+            <div class="question-title">
+              <div class="q-num">6</div>
+              <div class="q-text">Коммерциялық кәсіпкерлікке тән белгілер</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Негізгі мақсат тек жаңа технология ойлап табу болады</label>
+              <label class="option"><input type="checkbox" value="B"> Тек сақтандыру операцияларымен шектеледі</label>
+              <label class="option"><input type="checkbox" value="C"> Тауарды сатып алу және қайта сату арқылы табыс табу</label>
+              <label class="option"><input type="checkbox" value="D"> Тек өндірістік цехта өнім дайындау</label>
+              <label class="option"><input type="checkbox" value="E"> Тек басқарушылық кеңес беру</label>
+              <label class="option"><input type="checkbox" value="F"> Сауда айналымын ұйымдастыру және сұранысқа сәйкес әрекет ету</label>
+              <label class="option"><input type="checkbox" value="G"> Тек кредиттік шарттарды рәсімдеу</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F. Коммерциялық кәсіпкерлік тауарды сатып алу,
+              қайта сату, сауда айналымын ұйымдастыру және нарық сұранысына сәйкес
+              пайда табумен байланысты.
+            </div>
+          </div>
+
+          <div class="question" data-answer="B,E">
+            <div class="question-title">
+              <div class="q-num">7</div>
+              <div class="q-text">Қаржылық кәсіпкерліктің мазмұны</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек өндірістік шикізатты өңдеу</label>
+              <label class="option"><input type="checkbox" value="B"> Ақша және бағалы қағаздармен операция жасау</label>
+              <label class="option"><input type="checkbox" value="C"> Тек тауарды бөлшек саудада қайта сату</label>
+              <label class="option"><input type="checkbox" value="D"> Тек еңбек нарығындағы бос орындарды тіркеу</label>
+              <label class="option"><input type="checkbox" value="E"> Кредит, сақтандыру және қаржылық құралдар арқылы табыс табу</label>
+              <label class="option"><input type="checkbox" value="F"> Тек бизнес атауын таңдаумен шектелу</label>
+              <label class="option"><input type="checkbox" value="G"> Тек тұтынушыға тұрмыстық қызмет көрсету</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E. Қаржылық кәсіпкерлік ақша, бағалы қағаз, кредит,
+              сақтандыру және қаржылық құралдармен жасалатын операциялар арқылы табыс
+              табуға бағытталады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D,G">
+            <div class="question-title">
+              <div class="q-num">8</div>
+              <div class="q-text">Кәсіп ашу алдында бағаланатын негізгі факторлар</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Нарық сұранысы және бәсеке жағдайы</label>
+              <label class="option"><input type="checkbox" value="B"> Тек кәсіпкердің жеке демалыс жоспары</label>
+              <label class="option"><input type="checkbox" value="C"> Тек логотип түсінің әдемілігі</label>
+              <label class="option"><input type="checkbox" value="D"> Бастапқы капитал, ресурс мүмкіндігі және шығындар</label>
+              <label class="option"><input type="checkbox" value="E"> Тек кеңсе қабырғасының түсі</label>
+              <label class="option"><input type="checkbox" value="F"> Тек құжат қарпінің өлшемі</label>
+              <label class="option"><input type="checkbox" value="G"> Құқықтық форма, тәуекел және табыс мүмкіндігі</label>
+              <label class="option"><input type="checkbox" value="H"> Тек әлеуметтік желідегі пікір саны</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D, G. Кәсіп ашу кезінде нарық сұранысы, бәсеке,
+              капитал, ресурс, шығын, табыс, тәуекел және құқықтық форма бағаланады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F">
+            <div class="question-title">
+              <div class="q-num">9</div>
+              <div class="q-text">Ұйымдық-құқықтық форманы таңдаудың маңызы</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Ол тек фирма атауының ұзындығын анықтайды</label>
+              <label class="option"><input type="checkbox" value="B"> Ол өнім қаптамасының дизайнын ғана белгілейді</label>
+              <label class="option"><input type="checkbox" value="C"> Кәсіпкердің жауапкершілігі мен басқару тәртібіне әсер етеді</label>
+              <label class="option"><input type="checkbox" value="D"> Салық төлеу және капитал қалыптастырумен байланыспайды</label>
+              <label class="option"><input type="checkbox" value="E"> Серіктестермен қатынасқа әсер етпейді</label>
+              <label class="option"><input type="checkbox" value="F"> Капитал қалыптастыруға, салыққа және серіктестік қатынасқа әсер етеді</label>
+              <label class="option"><input type="checkbox" value="G"> Ол тек жарнамалық стиль таңдауға арналған</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F. Ұйымдық-құқықтық форма жауапкершілікке, басқаруға,
+              капитал қалыптастыруға, салық төлеуге және серіктестермен қатынасқа әсер етеді.
+            </div>
+          </div>
+
+          <div class="question" data-answer="B,E,G">
+            <div class="question-title">
+              <div class="q-num">10</div>
+              <div class="q-text">Жауапкершілігі шектеулі серіктестікке тән белгілер</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Қатысушылар барлық жеке мүлкімен шексіз жауап береді</label>
+              <label class="option"><input type="checkbox" value="B"> Бір немесе бірнеше қатысушы арқылы құрылуы мүмкін</label>
+              <label class="option"><input type="checkbox" value="C"> Капитал қатысушылар үлесімен байланыспайды</label>
+              <label class="option"><input type="checkbox" value="D"> ЖШС кәсіпкерлік қызметте қолданылмайды</label>
+              <label class="option"><input type="checkbox" value="E"> Қатысушылар жауапкершілігі салым көлемімен шектеледі</label>
+              <label class="option"><input type="checkbox" value="F"> Мемлекеттік тіркеуді қажет етпейді</label>
+              <label class="option"><input type="checkbox" value="G"> Құрылтай құжаттары мен қатысушылар үлесі маңызды болады</label>
+              <label class="option"><input type="checkbox" value="H"> Тек мемлекеттік мекеме ретінде құрылады</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E, G. ЖШС бір немесе бірнеше қатысушы арқылы
+              құрылуы мүмкін, қатысушылар жауапкершілігі салымымен шектеледі, ал
+              құрылтай құжаттары мен үлестер маңызды.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D">
+            <div class="question-title">
+              <div class="q-num">11</div>
+              <div class="q-text">ЖШС құру кезіндегі негізгі қадамдар</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Атау таңдау және құрылтай құжаттарын дайындау</label>
+              <label class="option"><input type="checkbox" value="B"> Тек жарнамалық ұран жазу</label>
+              <label class="option"><input type="checkbox" value="C"> Тек өнімнің сыртқы қаптамасын бекіту</label>
+              <label class="option"><input type="checkbox" value="D"> Қатысушылар үлесін анықтау және мемлекеттік тіркеуден өту</label>
+              <label class="option"><input type="checkbox" value="E"> Тек әлеуметтік желі парақшасын ашу</label>
+              <label class="option"><input type="checkbox" value="F"> Тек кеңсе интерьерін таңдау</label>
+              <label class="option"><input type="checkbox" value="G"> Тек тұтынушы пікірін жинау</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D. ЖШС құруда атау таңдау, құрылтай құжаттарын
+              дайындау, қатысушылар үлесін анықтау және мемлекеттік тіркеуден өту маңызды.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F">
+            <div class="question-title">
+              <div class="q-num">12</div>
+              <div class="q-text">Қаржылық жоспарлаудың кәсіпкерлік жобадағы қызметі</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Қаржылық нәтижені есептемей кәсіп бастауға мүмкіндік береді</label>
+              <label class="option"><input type="checkbox" value="B"> Тек фирма атауын таңдау үшін қолданылады</label>
+              <label class="option"><input type="checkbox" value="C"> Кіріс, шығыс, пайда және ақша ағындарын алдын ала есептейді</label>
+              <label class="option"><input type="checkbox" value="D"> Шығындарды бақылаудан толық босатады</label>
+              <label class="option"><input type="checkbox" value="E"> Қаржыландыру қажеттілігін анықтауға қатыспайды</label>
+              <label class="option"><input type="checkbox" value="F"> Қаражат жеткіліктілігін және күтілетін нәтижені бағалауға көмектеседі</label>
+              <label class="option"><input type="checkbox" value="G"> Тек қызметкерлердің жұмыс киімін жоспарлайды</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F. Қаржылық жоспарлау кіріс, шығыс, пайда, ақша
+              ағынын, қаржыландыру қажеттілігін және қаражат жеткіліктілігін бағалауға
+              бағытталады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="B,E,G">
+            <div class="question-title">
+              <div class="q-num">13</div>
+              <div class="q-text">Бизнес-жоспардың негізгі мазмұны</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек кәсіпкердің жеке өмірбаяны</label>
+              <label class="option"><input type="checkbox" value="B"> Кәсіпкерлік идеяны нақты жобаға айналдыратын құжат</label>
+              <label class="option"><input type="checkbox" value="C"> Тек кеңсе жиһазының тізімі</label>
+              <label class="option"><input type="checkbox" value="D"> Тек фирманың әлеуметтік желідегі суреті</label>
+              <label class="option"><input type="checkbox" value="E"> Нарық, өнім, маркетинг, өндіріс және қаржы шешімдерін жүйелейді</label>
+              <label class="option"><input type="checkbox" value="F"> Тәуекелдерді толық елемейді</label>
+              <label class="option"><input type="checkbox" value="G"> Жобаның тиімділігі мен тәуекелін алдын ала бағалауға көмектеседі</label>
+              <label class="option"><input type="checkbox" value="H"> Тек салық төлеуден босату үшін жасалады</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E, G. Бизнес-жоспар идеяны нақты жобаға айналдырады,
+              нарық, өнім, маркетинг, өндіріс, қаржы және тәуекелдерді жүйелейді.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D,F">
+            <div class="question-title">
+              <div class="q-num">14</div>
+              <div class="q-text">Бизнес-жоспарда қарастырылатын негізгі бөлімдер</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Жоба сипаттамасы және өнім немесе қызмет</label>
+              <label class="option"><input type="checkbox" value="B"> Тек кәсіпкердің жеке суреттері</label>
+              <label class="option"><input type="checkbox" value="C"> Тек кеңсе қабырғасының түсі</label>
+              <label class="option"><input type="checkbox" value="D"> Нарық талдауы, бәсеке және маркетинг жоспары</label>
+              <label class="option"><input type="checkbox" value="E"> Тек әлеуметтік желі паролі</label>
+              <label class="option"><input type="checkbox" value="F"> Өндіріс жоспары, қаржылық жоспар және тәуекелдер</label>
+              <label class="option"><input type="checkbox" value="G"> Тек фирманың ішкі ұраны</label>
+              <label class="option"><input type="checkbox" value="H"> Тек қызметкерлердің жеке демалысы</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D, F. Бизнес-жоспарда жоба, өнім, нарық, бәсеке,
+              маркетинг, өндіріс, қаржы және тәуекелдер қарастырылады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F">
+            <div class="question-title">
+              <div class="q-num">15</div>
+              <div class="q-text">Нарық талдауы қандай ақпаратты анықтайды?</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек кәсіпкердің жеке талғамын</label>
+              <label class="option"><input type="checkbox" value="B"> Тек кеңсе орналасқан қабатты</label>
+              <label class="option"><input type="checkbox" value="C"> Тұтынушыларды, сұранысты және нарық көлемін</label>
+              <label class="option"><input type="checkbox" value="D"> Тек қызметкерлердің жеке хоббиін</label>
+              <label class="option"><input type="checkbox" value="E"> Тек логотиптің түс үйлесімін</label>
+              <label class="option"><input type="checkbox" value="F"> Бәсекелестерді, баға деңгейін және өнімнің нарықтағы орнын</label>
+              <label class="option"><input type="checkbox" value="G"> Тек құрылтай құжатының қаріп өлшемін</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F. Нарық талдауы тұтынушыларды, сұранысты, нарық
+              көлемін, бәсекелестерді, бағаны және өнімнің нарықтағы орнын анықтайды.
+            </div>
+          </div>
+
+          <div class="question" data-answer="B,E">
+            <div class="question-title">
+              <div class="q-num">16</div>
+              <div class="q-text">Франчайзингтің негізгі мазмұны</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Кәсіпкерлік қызметті толық тоқтату тәсілі</label>
+              <label class="option"><input type="checkbox" value="B"> Дайын бизнес-модель мен брендті белгілі шарттармен пайдалану</label>
+              <label class="option"><input type="checkbox" value="C"> Тек жеке тұтыну үшін өнім өндіру</label>
+              <label class="option"><input type="checkbox" value="D"> Тек банк кредитін кепілсіз алу тәсілі</label>
+              <label class="option"><input type="checkbox" value="E"> Технология, стандарт және тәжірибе негізінде кәсіп жүргізу</label>
+              <label class="option"><input type="checkbox" value="F"> Тек салық төлеуден босату механизмі</label>
+              <label class="option"><input type="checkbox" value="G"> Тек фирма атауын кездейсоқ көшіру</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E. Франчайзинг дайын бизнес-модельді, брендті,
+              технологияны және тәжірибені белгілі шарттармен пайдалану арқылы кәсіп
+              жүргізу тәсілі.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D,G">
+            <div class="question-title">
+              <div class="q-num">17</div>
+              <div class="q-text">Франчайзинг қатысушылары мен олардың рөлі</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Франчайзер бренд пен бизнес-модель ұсынады</label>
+              <label class="option"><input type="checkbox" value="B"> Франчайзер тек тұтынушы ретінде қатысады</label>
+              <label class="option"><input type="checkbox" value="C"> Франчайзи брендті еш шартсыз тегін қолданады</label>
+              <label class="option"><input type="checkbox" value="D"> Франчайзи белгіленген шарттар бойынша бренд пен бизнес жүйесін пайдаланады</label>
+              <label class="option"><input type="checkbox" value="E"> Франчайзингте стандарттар мен төлемдер болмайды</label>
+              <label class="option"><input type="checkbox" value="F"> Франчайзи франчайзерге ешқандай міндеттеме алмайды</label>
+              <label class="option"><input type="checkbox" value="G"> Франчайзер технология, стандарт және қолдау бере алады</label>
+              <label class="option"><input type="checkbox" value="H"> Франчайзинг тек мемлекеттік бюджет арқылы іске асады</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D, G. Франчайзер бренд, модель, технология мен қолдау
+              ұсынады; франчайзи оларды шарттар мен төлемдер негізінде пайдаланады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F">
+            <div class="question-title">
+              <div class="q-num">18</div>
+              <div class="q-text">Франчайзингтің артықшылықтары</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Кәсіпкерді барлық төлемнен толық босатады</label>
+              <label class="option"><input type="checkbox" value="B"> Стандарт сақтау міндетін толық жояды</label>
+              <label class="option"><input type="checkbox" value="C"> Дайын бренд пен тәжірибені қолдануға мүмкіндік береді</label>
+              <label class="option"><input type="checkbox" value="D"> Нарыққа кіруді әрқашан мүмкін емес етеді</label>
+              <label class="option"><input type="checkbox" value="E"> Кәсіпкерлік тәуекелді толық нөлге түсіреді</label>
+              <label class="option"><input type="checkbox" value="F"> Оқыту, қолдау және дайын бизнес жүйесін пайдалануға көмектеседі</label>
+              <label class="option"><input type="checkbox" value="G"> Кәсіпкерді тұтынушымен жұмыс істеуден босатады</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F. Франчайзинг дайын брендті, тәжірибені, оқытуды,
+              қолдауды және дайын бизнес жүйесін қолдануға мүмкіндік береді.
+            </div>
+          </div>
+
+          <div class="question" data-answer="B,E">
+            <div class="question-title">
+              <div class="q-num">19</div>
+              <div class="q-text">Франчайзингтің шектеулері</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Кәсіпкер барлық стандарттан толық босатылады</label>
+              <label class="option"><input type="checkbox" value="B"> Белгіленген стандарттарды сақтау қажет болуы мүмкін</label>
+              <label class="option"><input type="checkbox" value="C"> Франчайзи ешқандай төлем жасамайды</label>
+              <label class="option"><input type="checkbox" value="D"> Франчайзингте брендті пайдалану шарты болмайды</label>
+              <label class="option"><input type="checkbox" value="E"> Дербес шешім қабылдау еркіндігі белгілі деңгейде шектелуі мүмкін</label>
+              <label class="option"><input type="checkbox" value="F"> Франчайзердің талаптары кәсіп жүргізуге әсер етпейді</label>
+              <label class="option"><input type="checkbox" value="G"> Тәуекел толық жойылып, бақылау қажет болмайды</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E. Франчайзингте стандарт сақтау, төлем жасау және
+              франчайзер талаптарын орындау қажет болуы мүмкін, сондықтан дербестік
+              белгілі деңгейде шектеледі.
+            </div>
+          </div>
+
+          <button class="btn btn-primary" type="button" onclick="checkSection('seralieva-block-3-test')">
+            Нәтижені көрсету
+          </button>
+
+          <div class="result-panel" id="result-seralieva-block-3-test">
+            <strong>Нәтиже:</strong>
+            <span class="result-text">Жауаптар тексерілгеннен кейін нәтиже осы жерде көрсетіледі.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+        <section class="section" id="block-4">
+      <div class="content-block">
+        <div class="section-kicker">4-блок · Басқару және тәуекелдер</div>
+        <h3>Персоналды басқару, кәсіпкерлік тәуекел және сақтандыру</h3>
+
+        <p>
+          Бұл блокта кәсіпкерлік қызметтегі басқару, персоналды басқару,
+          қызметкерлерді іріктеу, ынталандыру, еңбек өнімділігі, кәсіпкерлік
+          тәуекелдер, тәуекелдерді төмендету және кәсіпкерлік тәуекелдерді
+          сақтандыру қарастырылады. Материал кәсіпорынды тұрақты жүргізу және
+          бизнес қауіпсіздігін қамтамасыз ету логикасы бойынша жүйеленді.
+        </p>
+
+        <div class="note">
+          КТ фильтрі бойынша бұл блок мына тақырыптарға сәйкес келеді:
+          персоналды басқару, еңбек ресурстары, мотивация, кәсіпкерлік тәуекел,
+          қаржылық тәуекел, өндірістік тәуекел, коммерциялық тәуекел, сақтандыру,
+          жауапкершілік және бизнес тұрақтылығы.
+        </div>
+
+        <div class="theory-grid">
+          <div class="theory-card">
+            <strong>Басқарудың мәні</strong>
+            <p>
+              Басқару кәсіпорын мақсатына жету үшін адамдарды, ресурстарды,
+              ақпаратты, қаржыны және өндірістік үдерістерді үйлестіру қызметі
+              ретінде түсіндіріледі.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Кәсіпкерлік басқару</strong>
+            <p>
+              Кәсіпкерлік басқару нарық жағдайында шешім қабылдау, ресурстарды
+              тиімді пайдалану, тәуекелді бағалау және кәсіпорын нәтижесін жақсарту
+              әрекеттерін қамтиды.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Персоналды басқару</strong>
+            <p>
+              Персоналды басқару қызметкерлерді таңдау, орналастыру, оқыту,
+              ынталандыру, бағалау және еңбек нәтижесін арттыруға бағытталған
+              басқару жүйесі болып табылады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Қызметкерді іріктеу</strong>
+            <p>
+              Қызметкерді іріктеу кезінде кәсіби біліктілік, тәжірибе, жауапкершілік,
+              коммуникативтік қабілет, еңбек тәртібі және ұйым мақсатына сәйкестік
+              бағаланады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Еңбек ресурстары</strong>
+            <p>
+              Еңбек ресурстары кәсіпорынның маңызды ресурстарының бірі; олардың
+              сапасы өнімділікке, қызмет сапасына, клиентпен жұмысқа және жалпы
+              бизнес нәтижесіне әсер етеді.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Мотивация</strong>
+            <p>
+              Мотивация қызметкерлерді жақсы жұмыс істеуге, мақсатқа жетуге,
+              жауапкершілікпен әрекет етуге және нәтижені жақсартуға ынталандыратын
+              факторлар жүйесі.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Материалдық ынталандыру</strong>
+            <p>
+              Материалдық ынталандыруға жалақы, сыйақы, бонус, үстемеақы және
+              нәтижеге байланысты төлемдер жатады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Материалдық емес ынталандыру</strong>
+            <p>
+              Материалдық емес ынталандыруға мойындау, кәсіби өсу, оқыту,
+              қолайлы жұмыс ортасы, жауапкершілік беру және ұжымдағы құрмет жатады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Еңбек өнімділігі</strong>
+            <p>
+              Еңбек өнімділігі белгілі бір уақытта өндірілген өнім немесе көрсетілген
+              қызмет көлемімен сипатталады және кәсіпорын тиімділігінің маңызды
+              көрсеткіші болып табылады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Басқару сапасы</strong>
+            <p>
+              Басқару сапасы жоспарлау, ұйымдастыру, бақылау, талдау және адамдармен
+              жұмыс істеу деңгейіне байланысты; сапалы басқару шығынды азайтып,
+              нәтижені арттырады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Кәсіпкерлік тәуекел</strong>
+            <p>
+              Кәсіпкерлік тәуекел — нарықтағы белгісіздік, ресурстардың өзгеруі,
+              сұраныстың төмендеуі, шығындардың өсуі немесе басқару қателігі салдарынан
+              күтілген нәтижеге жетпеу ықтималдығы.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Тәуекелдің пайда болу себептері</strong>
+            <p>
+              Тәуекел сұраныс өзгерісінен, бәсекенің күшеюінен, бағаның ауытқуынан,
+              инфляциядан, жеткізуші сенімсіздігінен, қаржыландыру тапшылығынан және
+              басқару шешімдерінің қателігінен туындауы мүмкін.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Өндірістік тәуекел</strong>
+            <p>
+              Өндірістік тәуекел өнім шығару, шикізат жеткізу, технологиялық үдеріс,
+              жабдықтың істен шығуы және өнім сапасы мәселелерімен байланысты.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Коммерциялық тәуекел</strong>
+            <p>
+              Коммерциялық тәуекел сату көлемінің төмендеуі, тұтынушы сұранысының
+              өзгеруі, бәсекелестер әрекеті және тауарды өткізу қиындығымен байланысты.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Қаржылық тәуекел</strong>
+            <p>
+              Қаржылық тәуекел ақша қаражатының жетіспеуі, кредитті қайтара алмау,
+              пайыздық шығынның өсуі, төлем қабілетінің төмендеуі және табыстың азаюы
+              арқылы көрінуі мүмкін.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Нарықтық тәуекел</strong>
+            <p>
+              Нарықтық тәуекел баға, сұраныс, валюта бағамы, бәсеке және жалпы
+              нарық конъюнктурасының өзгеруіне байланысты пайда болады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Құқықтық тәуекел</strong>
+            <p>
+              Құқықтық тәуекел заң талаптарын бұзу, келісімшарттарды дұрыс рәсімдемеу,
+              рұқсат құжаттарының болмауы немесе нормативтік өзгерістерге бейімделмеу
+              салдарынан туындайды.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Тәуекелді бағалау</strong>
+            <p>
+              Тәуекелді бағалау ықтимал шығынды, оның пайда болу ықтималдығын,
+              бизнеске әсерін және оны төмендету мүмкіндігін анықтауға бағытталады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Тәуекелді төмендету</strong>
+            <p>
+              Тәуекелді төмендету үшін жоспарлау, нарықты талдау, шығынды бақылау,
+              келісімшартты дұрыс рәсімдеу, әртараптандыру, резерв құру және сақтандыру
+              қолданылады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Әртараптандыру</strong>
+            <p>
+              Әртараптандыру бірнеше өнім, нарық, жеткізуші немесе табыс көзі арқылы
+              тәуекелді бөлуге мүмкіндік береді.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Резерв құру</strong>
+            <p>
+              Резерв құру күтпеген шығындарды жабуға, ақша тапшылығын азайтуға және
+              кәсіпорынның қысқа мерзімді тұрақтылығын сақтауға көмектеседі.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Сақтандыру</strong>
+            <p>
+              Сақтандыру кәсіпкерлік тәуекелдің белгілі бір бөлігін сақтандыру ұйымына
+              беру арқылы ықтимал шығынды өтеу механизмін қалыптастырады.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Кәсіпкерлік тәуекелді сақтандыру</strong>
+            <p>
+              Кәсіпкерлік тәуекелді сақтандыру мүлікке, жауапкершілікке, өндірістің
+              тоқтауына, тасымалдауға, қаржылық шығынға немесе келісімшарттық міндеттемеге
+              байланысты тәуекелдерді қамтуы мүмкін.
+            </p>
+          </div>
+
+          <div class="theory-card">
+            <strong>Сақтандырудың шектеуі</strong>
+            <p>
+              Сақтандыру тәуекелді толық жоймайды, бірақ оның қаржылық салдарын
+              азайтуға көмектеседі; кәсіпкер сақтандыру шартын, төлемін және қамту
+              көлемін дұрыс бағалауы керек.
+            </p>
+          </div>
+        </div>
+
+        <div class="test-box" data-test="seralieva-block-4-test">
+          <h3>Тест тапсырмалары</h3>
+          <p class="section-desc">
+            Бір, екі немесе үш дұрыс жауап болуы мүмкін. Барлық дұрыс жауапты белгілеңіз.
+          </p>
+
+          <div class="question" data-answer="B,E">
+            <div class="question-title">
+              <div class="q-num">1</div>
+              <div class="q-text">Кәсіпорындағы басқарудың негізгі мазмұны</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек фирманың сыртқы белгісін безендіру</label>
+              <label class="option"><input type="checkbox" value="B"> Адамдарды, ресурстарды және ақпаратты үйлестіру</label>
+              <label class="option"><input type="checkbox" value="C"> Тек кәсіпкердің жеке демалысын жоспарлау</label>
+              <label class="option"><input type="checkbox" value="D"> Тек тауар атауын өзгерту</label>
+              <label class="option"><input type="checkbox" value="E"> Қаржы, өндіріс және шешім қабылдау үдерістерін мақсатқа бағыттау</label>
+              <label class="option"><input type="checkbox" value="F"> Тек әлеуметтік желідегі сурет таңдау</label>
+              <label class="option"><input type="checkbox" value="G"> Тек кеңсе түсін бекіту</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E. Басқару кәсіпорын мақсатына жету үшін адамдарды,
+              ресурстарды, ақпаратты, қаржыны және өндірістік үдерістерді үйлестіреді.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D,F">
+            <div class="question-title">
+              <div class="q-num">2</div>
+              <div class="q-text">Персоналды басқарудың негізгі бағыттары</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Қызметкерлерді таңдау және орналастыру</label>
+              <label class="option"><input type="checkbox" value="B"> Тек өнім қаптамасын өзгерту</label>
+              <label class="option"><input type="checkbox" value="C"> Тек нарықтағы баға деңгейін бақылау</label>
+              <label class="option"><input type="checkbox" value="D"> Оқыту, ынталандыру және бағалау</label>
+              <label class="option"><input type="checkbox" value="E"> Тек банк кредитін рәсімдеу</label>
+              <label class="option"><input type="checkbox" value="F"> Еңбек нәтижесін арттыру</label>
+              <label class="option"><input type="checkbox" value="G"> Тек фирма логотипін таңдау</label>
+              <label class="option"><input type="checkbox" value="H"> Тек салық мөлшерлемесін белгілеу</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D, F. Персоналды басқару қызметкерлерді таңдау,
+              орналастыру, оқыту, ынталандыру, бағалау және еңбек нәтижесін арттыруды
+              қамтиды.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F">
+            <div class="question-title">
+              <div class="q-num">3</div>
+              <div class="q-text">Қызметкерді іріктеу кезінде ескерілетін өлшемдер</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек қызметкердің киім түсі</label>
+              <label class="option"><input type="checkbox" value="B"> Тек әлеуметтік желідегі жазбалар саны</label>
+              <label class="option"><input type="checkbox" value="C"> Кәсіби біліктілік, тәжірибе және жауапкершілік</label>
+              <label class="option"><input type="checkbox" value="D"> Тек кеңсе орналасқан жерге жақындығы</label>
+              <label class="option"><input type="checkbox" value="E"> Тек жеке хоббиі</label>
+              <label class="option"><input type="checkbox" value="F"> Коммуникативтік қабілет, еңбек тәртібі және ұйым мақсатына сәйкестік</label>
+              <label class="option"><input type="checkbox" value="G"> Тек жалақыны сұрамауы</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F. Қызметкерді іріктеуде біліктілік, тәжірибе,
+              жауапкершілік, коммуникация, еңбек тәртібі және ұйым мақсатына сәйкестік
+              бағаланады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="B,E,G">
+            <div class="question-title">
+              <div class="q-num">4</div>
+              <div class="q-text">Мотивация жүйесіне қатысты дұрыс тұжырымдар</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Мотивация қызметкер нәтижесіне әсер етпейді</label>
+              <label class="option"><input type="checkbox" value="B"> Мотивация қызметкерлерді жақсы жұмыс істеуге ынталандырады</label>
+              <label class="option"><input type="checkbox" value="C"> Мотивация тек жазалау арқылы іске асады</label>
+              <label class="option"><input type="checkbox" value="D"> Мотивация кәсіпорын мақсатына қатыспайды</label>
+              <label class="option"><input type="checkbox" value="E"> Материалдық және материалдық емес ынталандыруды қамтуы мүмкін</label>
+              <label class="option"><input type="checkbox" value="F"> Мотивация еңбек өнімділігін төмендету үшін қолданылады</label>
+              <label class="option"><input type="checkbox" value="G"> Жауапкершілік пен нәтижені жақсартуға ықпал етеді</label>
+              <label class="option"><input type="checkbox" value="H"> Мотивация тек фирма атауын өзгертуге арналған</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E, G. Мотивация қызметкерлерді жақсы жұмысқа,
+              жауапкершілікке және нәтижені жақсартуға ынталандырады; ол материалдық
+              және материалдық емес болуы мүмкін.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D">
+            <div class="question-title">
+              <div class="q-num">5</div>
+              <div class="q-text">Материалдық ынталандыру түрлері</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Жалақы және сыйақы</label>
+              <label class="option"><input type="checkbox" value="B"> Тек ұжымдағы құрмет</label>
+              <label class="option"><input type="checkbox" value="C"> Тек кәсіби өсу мүмкіндігі</label>
+              <label class="option"><input type="checkbox" value="D"> Бонус, үстемеақы және нәтижеге байланысты төлем</label>
+              <label class="option"><input type="checkbox" value="E"> Тек мойындау және алғыс айту</label>
+              <label class="option"><input type="checkbox" value="F"> Тек оқыту мүмкіндігі</label>
+              <label class="option"><input type="checkbox" value="G"> Тек қолайлы жұмыс ортасы</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D. Материалдық ынталандыруға жалақы, сыйақы, бонус,
+              үстемеақы және нәтижеге байланысты төлемдер жатады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F">
+            <div class="question-title">
+              <div class="q-num">6</div>
+              <div class="q-text">Материалдық емес ынталандыру түрлері</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек жалақы төлеу</label>
+              <label class="option"><input type="checkbox" value="B"> Тек ақшалай бонус беру</label>
+              <label class="option"><input type="checkbox" value="C"> Мойындау, құрмет және кәсіби өсу мүмкіндігі</label>
+              <label class="option"><input type="checkbox" value="D"> Тек үстемеақы есептеу</label>
+              <label class="option"><input type="checkbox" value="E"> Тек нәтижеге байланысты ақшалай төлем</label>
+              <label class="option"><input type="checkbox" value="F"> Оқыту, қолайлы жұмыс ортасы және жауапкершілік беру</label>
+              <label class="option"><input type="checkbox" value="G"> Тек сақтандыру жарнасын төлеу</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F. Материалдық емес ынталандыруға мойындау, құрмет,
+              кәсіби өсу, оқыту, қолайлы орта және жауапкершілік беру жатады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="B,E">
+            <div class="question-title">
+              <div class="q-num">7</div>
+              <div class="q-text">Еңбек өнімділігіне қатысты дұрыс тұжырымдар</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Еңбек өнімділігі кәсіпорын тиімділігіне әсер етпейді</label>
+              <label class="option"><input type="checkbox" value="B"> Белгілі бір уақытта өндірілген өнім немесе қызмет көлемімен сипатталады</label>
+              <label class="option"><input type="checkbox" value="C"> Тек фирма логотипінің сапасымен өлшенеді</label>
+              <label class="option"><input type="checkbox" value="D"> Тек қызметкердің жеке талғамын көрсетеді</label>
+              <label class="option"><input type="checkbox" value="E"> Кәсіпорын тиімділігінің маңызды көрсеткіші болып табылады</label>
+              <label class="option"><input type="checkbox" value="F"> Өндіріс нәтижесімен байланыспайды</label>
+              <label class="option"><input type="checkbox" value="G"> Тек әлеуметтік желідегі белсенділікпен анықталады</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E. Еңбек өнімділігі белгілі бір уақытта өндірілген
+              өнім немесе қызмет көлемін көрсетеді және кәсіпорын тиімділігін бағалауда
+              маңызды.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D,F">
+            <div class="question-title">
+              <div class="q-num">8</div>
+              <div class="q-text">Кәсіпкерлік тәуекелдің пайда болу себептері</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Сұраныстың өзгеруі және бәсекенің күшеюі</label>
+              <label class="option"><input type="checkbox" value="B"> Нарықтағы белгісіздіктің толық болмауы</label>
+              <label class="option"><input type="checkbox" value="C"> Барлық шығындардың алдын ала нөлге тең болуы</label>
+              <label class="option"><input type="checkbox" value="D"> Бағаның ауытқуы, инфляция және жеткізуші сенімсіздігі</label>
+              <label class="option"><input type="checkbox" value="E"> Табыстың әрқашан кепілді өсуі</label>
+              <label class="option"><input type="checkbox" value="F"> Қаржыландыру тапшылығы және басқару қателігі</label>
+              <label class="option"><input type="checkbox" value="G"> Тұтынушы сұранысының ешқашан өзгермеуі</label>
+              <label class="option"><input type="checkbox" value="H"> Кәсіпкерлік шешімдердің тәуекелсіз болуы</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D, F. Кәсіпкерлік тәуекел сұраныс, бәсеке, баға,
+              инфляция, жеткізуші сенімсіздігі, қаржыландыру тапшылығы және басқару
+              қателігі салдарынан пайда болуы мүмкін.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F">
+            <div class="question-title">
+              <div class="q-num">9</div>
+              <div class="q-text">Өндірістік тәуекелге тән жағдайлар</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек банк кредитінің пайыздық ставкасының өзгеруі</label>
+              <label class="option"><input type="checkbox" value="B"> Тек клиенттің төлемді кешіктіруі</label>
+              <label class="option"><input type="checkbox" value="C"> Шикізат жеткізу және технологиялық үдеріс мәселелері</label>
+              <label class="option"><input type="checkbox" value="D"> Тек валюта бағамының өзгеруі</label>
+              <label class="option"><input type="checkbox" value="E"> Тек келісімшарттың құқықтық қатесі</label>
+              <label class="option"><input type="checkbox" value="F"> Жабдықтың істен шығуы және өнім сапасы мәселелері</label>
+              <label class="option"><input type="checkbox" value="G"> Тек жарнамалық науқан мәтіні</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F. Өндірістік тәуекел шикізат жеткізу, технология,
+              жабдықтың істен шығуы және өнім сапасы мәселелерімен байланысты.
+            </div>
+          </div>
+
+          <div class="question" data-answer="B,E,G">
+            <div class="question-title">
+              <div class="q-num">10</div>
+              <div class="q-text">Коммерциялық тәуекелге тән белгілер</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек өндірістік станоктың бұзылуы</label>
+              <label class="option"><input type="checkbox" value="B"> Сату көлемінің төмендеуі</label>
+              <label class="option"><input type="checkbox" value="C"> Тек бухгалтерлік есеп формасын ауыстыру</label>
+              <label class="option"><input type="checkbox" value="D"> Тек құқықтық құжаттың қате жазылуы</label>
+              <label class="option"><input type="checkbox" value="E"> Тұтынушы сұранысының өзгеруі</label>
+              <label class="option"><input type="checkbox" value="F"> Тек банк пайызын төлеу міндеті</label>
+              <label class="option"><input type="checkbox" value="G"> Бәсекелестер әрекеті және тауарды өткізу қиындығы</label>
+              <label class="option"><input type="checkbox" value="H"> Тек сақтандыру шартының мерзімі</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E, G. Коммерциялық тәуекел сату көлемінің төмендеуі,
+              сұраныстың өзгеруі, бәсекелестер әрекеті және тауарды өткізу қиындығымен
+              байланысты.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D">
+            <div class="question-title">
+              <div class="q-num">11</div>
+              <div class="q-text">Қаржылық тәуекелдің көріністері</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Ақша қаражатының жетіспеуі және төлем қабілетінің төмендеуі</label>
+              <label class="option"><input type="checkbox" value="B"> Қаржылық міндеттемелердің толық болмауы</label>
+              <label class="option"><input type="checkbox" value="C"> Пайыздық шығынның әрқашан нөлге тең болуы</label>
+              <label class="option"><input type="checkbox" value="D"> Кредитті қайтара алмау және пайыздық шығынның өсуі</label>
+              <label class="option"><input type="checkbox" value="E"> Табыстың әрқашан кепілді артуы</label>
+              <label class="option"><input type="checkbox" value="F"> Барлық шығындардың сақтандырусыз жабылуы</label>
+              <label class="option"><input type="checkbox" value="G"> Ақша ағынының тәуекелсіз болуы</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D. Қаржылық тәуекел ақша тапшылығы, кредитті қайтара
+              алмау, пайыздық шығынның өсуі және төлем қабілетінің төмендеуі арқылы
+              көрінеді.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F">
+            <div class="question-title">
+              <div class="q-num">12</div>
+              <div class="q-text">Құқықтық тәуекелдің пайда болу себептері</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Өнім сапасының жоғары болуы</label>
+              <label class="option"><input type="checkbox" value="B"> Қаржылық жоспардың нақты жасалуы</label>
+              <label class="option"><input type="checkbox" value="C"> Заң талаптарын бұзу немесе келісімшартты дұрыс рәсімдемеу</label>
+              <label class="option"><input type="checkbox" value="D"> Сұраныстың тұрақты болуы</label>
+              <label class="option"><input type="checkbox" value="E"> Клиенттермен байланыстың жақсаруы</label>
+              <label class="option"><input type="checkbox" value="F"> Рұқсат құжаттарының болмауы немесе нормативтік өзгерістерге бейімделмеу</label>
+              <label class="option"><input type="checkbox" value="G"> Сақтандыру шартының дұрыс жасалуы</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F. Құқықтық тәуекел заң талаптарын бұзу, келісімшартты
+              дұрыс рәсімдемеу, рұқсат құжаттарының болмауы және нормативтік өзгерістерге
+              бейімделмеу салдарынан туындайды.
+            </div>
+          </div>
+
+          <div class="question" data-answer="B,E,G">
+            <div class="question-title">
+              <div class="q-num">13</div>
+              <div class="q-text">Тәуекелді бағалау кезінде анықталатын көрсеткіштер</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек фирма атауының ұзындығы</label>
+              <label class="option"><input type="checkbox" value="B"> Ықтимал шығын көлемі</label>
+              <label class="option"><input type="checkbox" value="C"> Тек кеңсе интерьерінің бағасы</label>
+              <label class="option"><input type="checkbox" value="D"> Тек әлеуметтік желідегі пікір саны</label>
+              <label class="option"><input type="checkbox" value="E"> Тәуекелдің пайда болу ықтималдығы</label>
+              <label class="option"><input type="checkbox" value="F"> Тек логотип түсінің сәйкестігі</label>
+              <label class="option"><input type="checkbox" value="G"> Бизнеске әсері және төмендету мүмкіндігі</label>
+              <label class="option"><input type="checkbox" value="H"> Тек қызметкердің жеке талғамы</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E, G. Тәуекелді бағалау ықтимал шығынды, пайда болу
+              ықтималдығын, бизнеске әсерін және оны төмендету мүмкіндігін анықтайды.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D,F">
+            <div class="question-title">
+              <div class="q-num">14</div>
+              <div class="q-text">Тәуекелді төмендету тәсілдері</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Жоспарлау және нарықты талдау</label>
+              <label class="option"><input type="checkbox" value="B"> Шығындарды бақылаудан бас тарту</label>
+              <label class="option"><input type="checkbox" value="C"> Келісімшарттарды ауызша белгісіз қалдыру</label>
+              <label class="option"><input type="checkbox" value="D"> Шығынды бақылау және келісімшартты дұрыс рәсімдеу</label>
+              <label class="option"><input type="checkbox" value="E"> Барлық табысты бір клиентке тәуелді ету</label>
+              <label class="option"><input type="checkbox" value="F"> Әртараптандыру, резерв құру және сақтандыру</label>
+              <label class="option"><input type="checkbox" value="G"> Тәуекелді бағаламау</label>
+              <label class="option"><input type="checkbox" value="H"> Нарықтағы өзгерісті елемеу</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D, F. Тәуекелді төмендету үшін жоспарлау, нарық
+              талдауы, шығынды бақылау, келісімшартты дұрыс рәсімдеу, әртараптандыру,
+              резерв және сақтандыру қолданылады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F">
+            <div class="question-title">
+              <div class="q-num">15</div>
+              <div class="q-text">Әртараптандырудың тәуекелді төмендетудегі рөлі</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Барлық табысты бір ғана өнімге тәуелді етеді</label>
+              <label class="option"><input type="checkbox" value="B"> Барлық жеткізушіні бір ғана көзге шоғырландырады</label>
+              <label class="option"><input type="checkbox" value="C"> Тәуекелді бірнеше өнім, нарық немесе табыс көзі арасында бөледі</label>
+              <label class="option"><input type="checkbox" value="D"> Нарық өзгерісіне бейімделуді қиындатады</label>
+              <label class="option"><input type="checkbox" value="E"> Кәсіпорынды бір клиентке толық тәуелді етеді</label>
+              <label class="option"><input type="checkbox" value="F"> Бір бағыттағы шығынның жалпы бизнеске әсерін азайтуы мүмкін</label>
+              <label class="option"><input type="checkbox" value="G"> Тәуекелді бағалауды қажетсіз етеді</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F. Әртараптандыру тәуекелді бірнеше өнім, нарық,
+              жеткізуші немесе табыс көзі арасында бөліп, бір бағыттағы шығын әсерін
+              төмендетуі мүмкін.
+            </div>
+          </div>
+
+          <div class="question" data-answer="B,E">
+            <div class="question-title">
+              <div class="q-num">16</div>
+              <div class="q-text">Резерв құрудың кәсіпкерлік қызметтегі маңызы</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Күтпеген шығындарды жабуға көмектеспейді</label>
+              <label class="option"><input type="checkbox" value="B"> Күтпеген шығындарды жабуға мүмкіндік береді</label>
+              <label class="option"><input type="checkbox" value="C"> Ақша тапшылығын күшейту үшін қолданылады</label>
+              <label class="option"><input type="checkbox" value="D"> Қысқа мерзімді тұрақтылыққа әсер етпейді</label>
+              <label class="option"><input type="checkbox" value="E"> Ақша тапшылығын азайтып, тұрақтылықты сақтауға көмектеседі</label>
+              <label class="option"><input type="checkbox" value="F"> Кәсіпкерлік тәуекелді көбейту үшін жасалады</label>
+              <label class="option"><input type="checkbox" value="G"> Тек фирма атауын қорғауға арналған</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E. Резерв күтпеген шығындарды жабуға, ақша тапшылығын
+              азайтуға және кәсіпорынның қысқа мерзімді тұрақтылығын сақтауға көмектеседі.
+            </div>
+          </div>
+
+          <div class="question" data-answer="A,D,G">
+            <div class="question-title">
+              <div class="q-num">17</div>
+              <div class="q-text">Сақтандырудың кәсіпкерлік тәуекелді басқарудағы қызметі</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Ықтимал шығынның бір бөлігін өтеу механизмін қалыптастырады</label>
+              <label class="option"><input type="checkbox" value="B"> Кәсіпкерлік тәуекелді толық және мәңгілік жояды</label>
+              <label class="option"><input type="checkbox" value="C"> Сақтандыру шартының мазмұнын бағалауды қажетсіз етеді</label>
+              <label class="option"><input type="checkbox" value="D"> Тәуекелдің белгілі бір бөлігін сақтандыру ұйымына береді</label>
+              <label class="option"><input type="checkbox" value="E"> Кәсіпкерді барлық басқару шешімінен босатады</label>
+              <label class="option"><input type="checkbox" value="F"> Шығындардың пайда болу ықтималдығын әрқашан нөлге түсіреді</label>
+              <label class="option"><input type="checkbox" value="G"> Қаржылық салдарды азайтуға көмектеседі</label>
+              <label class="option"><input type="checkbox" value="H"> Тек маркетинг жоспарын ауыстырады</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: A, D, G. Сақтандыру тәуекелдің белгілі бір бөлігін
+              сақтандыру ұйымына беріп, ықтимал шығынды өтеу және қаржылық салдарды
+              азайту механизмін қалыптастырады.
+            </div>
+          </div>
+
+          <div class="question" data-answer="C,F">
+            <div class="question-title">
+              <div class="q-num">18</div>
+              <div class="q-text">Кәсіпкерлік тәуекелді сақтандыру қамтуы мүмкін бағыттар</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Тек фирма атауының қысқалығын</label>
+              <label class="option"><input type="checkbox" value="B"> Тек кеңсе интерьерінің сәнін</label>
+              <label class="option"><input type="checkbox" value="C"> Мүлікке және жауапкершілікке байланысты тәуекелдер</label>
+              <label class="option"><input type="checkbox" value="D"> Тек әлеуметтік желідегі жазба санын</label>
+              <label class="option"><input type="checkbox" value="E"> Тек кәсіпкердің жеке демалысын</label>
+              <label class="option"><input type="checkbox" value="F"> Өндірістің тоқтауы, тасымалдау, қаржылық шығын және келісімшарттық міндеттеме тәуекелдері</label>
+              <label class="option"><input type="checkbox" value="G"> Тек қызметкердің жеке талғамын</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: C, F. Кәсіпкерлік тәуекелді сақтандыру мүлік,
+              жауапкершілік, өндірістің тоқтауы, тасымалдау, қаржылық шығын және
+              келісімшарттық міндеттемелер тәуекелдерін қамтуы мүмкін.
+            </div>
+          </div>
+
+          <div class="question" data-answer="B,E,G">
+            <div class="question-title">
+              <div class="q-num">19</div>
+              <div class="q-text">Сақтандыруды қолданғанда кәсіпкер ескеретін шарттар</div>
+            </div>
+
+            <div class="options">
+              <label class="option"><input type="checkbox" value="A"> Сақтандыру шартын оқымау</label>
+              <label class="option"><input type="checkbox" value="B"> Сақтандыру шартының мазмұны</label>
+              <label class="option"><input type="checkbox" value="C"> Қамту көлемін мүлде бағаламау</label>
+              <label class="option"><input type="checkbox" value="D"> Сақтандыру төлемін елемеу</label>
+              <label class="option"><input type="checkbox" value="E"> Сақтандыру төлемі және қамту көлемі</label>
+              <label class="option"><input type="checkbox" value="F"> Тәуекелдің қаржылық салдарын толық елемеу</label>
+              <label class="option"><input type="checkbox" value="G"> Қандай тәуекел сақтандырылатынын нақты анықтау</label>
+              <label class="option"><input type="checkbox" value="H"> Барлық тәуекел автоматты түрде сақтандырылады деп санау</label>
+            </div>
+
+            <div class="explanation">
+              Дұрыс жауаптар: B, E, G. Кәсіпкер сақтандыру шартын, төлемін, қамту
+              көлемін және нақты қандай тәуекел сақтандырылатынын бағалауы керек.
+            </div>
+          </div>
+
+          <button class="btn btn-primary" type="button" onclick="checkSection('seralieva-block-4-test')">
+            Нәтижені көрсету
+          </button>
+
+          <div class="result-panel" id="result-seralieva-block-4-test">
+            <strong>Нәтиже:</strong>
+            <span class="result-text">Жауаптар тексерілгеннен кейін нәтиже осы жерде көрсетіледі.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+        <footer class="content-block" style="margin-top: 30px;">
+      <div class="section-kicker">Сайт аяқталды</div>
+      <h3>Сералиева А.М., Казиева А.Н. “Основы экономики и предпринимательства” · 2022</h3>
+
+      <p>
+        Бұл сайт Сералиева А.М. және Казиева А.Н. “Основы экономики и предпринимательства”.
+        Алматы: “Альманахъ”, 2022 оқу құралы бойынша ашық каталогта көрсетілген
+        тақырыптарға сүйеніп дайындалды. Толық PDF/оглавление ашық қолжетімді
+        болмағандықтан, сайтта нақты тараулар ойдан шығарылмады: материал тек ашық
+        расталған тақырыптық бағыттар және КТ мазмұны арқылы жүйеленді.
+      </p>
+
+      <p>
+        Тест тапсырмаларында бір, екі немесе үш дұрыс жауап болуы мүмкін.
+        “Нәтижені көрсету” батырмасын басқаннан кейін дұрыс жауаптар жасыл түспен,
+        қате белгіленген жауаптар қызыл түспен көрсетіледі және әр сұрақтың
+        түсіндірмесі ашылады.
+      </p>
+
+      <p style="margin-bottom: 0; color: var(--muted);">
+        © @elnazm_ln
+      </p>
+    </footer>
+  </div>
+
+  <a class="floating-up" href="#top" aria-label="Жоғары көтерілу">↑</a>
+
+  <script>
+    function normalizeAnswers(answerString) {
+      return answerString
+        .split(',')
+        .map(item => item.trim())
+        .filter(Boolean)
+        .sort();
+    }
+
+    function getSelectedAnswers(question) {
+      return Array
+        .from(question.querySelectorAll('input[type="checkbox"]:checked'))
+        .map(input => input.value.trim())
+        .sort();
+    }
+
+    function arraysEqual(first, second) {
+      if (first.length !== second.length) return false;
+
+      for (let i = 0; i < first.length; i++) {
+        if (first[i] !== second[i]) return false;
+      }
+
+      return true;
+    }
+
+    function checkSection(testId) {
+      const testBox = document.querySelector(`[data-test="${testId}"]`);
+      const resultPanel = document.getElementById(`result-${testId}`);
+
+      if (!testBox || !resultPanel) return;
+
+      const questions = Array.from(testBox.querySelectorAll('.question'));
+      let correctCount = 0;
+
+      questions.forEach(question => {
+        const correctAnswers = normalizeAnswers(question.dataset.answer || '');
+        const selectedAnswers = getSelectedAnswers(question);
+        const options = Array.from(question.querySelectorAll('.option'));
+
+        question.classList.add('checked');
+
+        options.forEach(option => {
+          option.classList.remove('correct', 'wrong');
+
+          const input = option.querySelector('input[type="checkbox"]');
+          if (!input) return;
+
+          const value = input.value.trim();
+          const isCorrect = correctAnswers.includes(value);
+          const isSelected = selectedAnswers.includes(value);
+
+          if (isCorrect) {
+            option.classList.add('correct');
+          }
+
+          if (isSelected && !isCorrect) {
+            option.classList.add('wrong');
+          }
+        });
+
+        if (arraysEqual(correctAnswers, selectedAnswers)) {
+          correctCount++;
+        }
+      });
+
+      const total = questions.length;
+      const percent = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+
+      const resultText = resultPanel.querySelector('.result-text');
+
+      if (resultText) {
+        resultText.textContent = `${correctCount} / ${total} дұрыс жауап · ${percent}%`;
+      }
+
+      resultPanel.classList.add('show');
+
+      resultPanel.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = Array.from(document.querySelectorAll('.test-box .btn-primary'));
+
+      buttons.forEach(button => {
+        const testBox = button.closest('.test-box');
+        if (!testBox) return;
+
+        const testId = testBox.dataset.test;
+        if (!testId) return;
+
+        button.addEventListener('click', () => {
+          checkSection(testId);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
